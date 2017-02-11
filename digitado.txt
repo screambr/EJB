@@ -1,0 +1,500 @@
+psql -h localhost -U java01 -c "CREATE DATABASE CURSO_JPA02"
+psql -U -d curso_java -W
+psql -U -d curso_java -W
+psql -U  curso_java -W
+psql  curso_java -W
+psql
+psql -U java01 -d curso_java_S -W
+psql -U java01 -d curso_java_sS -W
+psql -U java01 -d curso_java_s -W
+psql -d curso_java_s -W
+psql -h localhost -c "CREATE DATABASE CURSO_JPA02"
+psql -h localhost -c "CREATE DATABASE CURSO_JPA02"
+psql -h 10.1.2.146 -c "CREATE DATABASE CURSO_JPA_S"
+psql -h 10.1.2.146 -d curso_java03 -W
+psql -h 10.1.2.146 -d curso_java -W
+eclipse_neon 
+psql -h 10.1.2.146 -d curso_java -W
+psql -h 10.1.2.146 -d curso_java03 -W
+ping 10.2.2.186
+ping 10.1.2.186
+ping 10.2.1.186
+ping 10.1.2.146
+psql -h 10.1.2.146 -d curso_java03 -W
+psql -h 10.1.2.146 -d curso_java03 -W
+psql -h 127.0.0.1 -d curso_java03 -W
+psql -h 127.0.0.1 -d curso_java -W
+psql -h localhost -d curso_java -W
+psql -U java01 -d curso_java03 -W
+psql -U java01 -d curso_java -W
+psql -h 10.1.2.146 -d curso_java -W
+arp -a
+ping 10.1.2.146
+psql -h 10.1.2.146 -d curso_java -W
+psql -h 10.2.1.146 -d curso_java03 -W
+psql -h 10.1.2.146 -d curso_java03 -W
+psql -d curso_java -W
+psql -d JPA_EXERCICIOS -W
+psql -d garagem_jpa -W
+psql -d garagem-jpa -W
+psql -d garagem-jpa_test -W
+psql -d garagem-jpa_teste -W
+psql -d garagem-jpa -W
+psql -d JPA_EXERCICIOS -W
+psql -d JPA_EXERCICIOS -W
+psql -d curso_java_s -W
+psql -d curso_java_s -W
+psql -d curso_java_s -W
+psql -d curso_java_s -W
+psql -d curso_java_s -W
+\d
+\d
+\d
+\d
+\d
+\q
+\q
+git add .
+cd Git
+git add .
+git status
+git commit -m "OK
+git push
+eclipse_neon 
+pgadmin
+ifconfig
+psql -d curso_java_s -W
+psql -d passagens-aereas -W
+git add .
+cd Git
+git add .
+git status
+git commit -m "OK
+git commit -m "OK"
+git push
+exit
+eclipse_neon $
+eclipse_neon$
+eclipse_neon
+eclipse_neon
+eclipse cd
+eclipse_neon
+eclipse_neon
+eclipse_neon&
+eclipse_neon$
+eclipse_neon
+eclipse_neon
+killall eclipse_neon
+eclipse_neon
+eclipse_neon
+eclipse_neon
+eclipse_neon
+eclipse_neon
+eclipse_neon
+eclipse_neon
+eclipse_neon
+cd Git
+git add .
+git status
+git commit -m "OK"
+git push
+exit
+cd Git
+curl
+curl --help
+curl -v -x DELETE http://localhost:8080/curl -v -X DELETE http://localhost:8080/carrinhos/1/produtos/3467
+curl -v -X DELETE http://localhost:8080/carrinhos/1/produtos/3467
+curl -v -X DELETE http://localhost:8080/carrinhos/1/produtos/6237
+curl -v -X DELETE http://localhost:8080/carrinhos/1/produtos/6237
+  
+  curl -v -X PUT -d "<br.com.dextra.loja.modelo.Produto> <preco>5.5</preco> <id>3467</id><nome>Cerveja Proibida</nome><quantidade>10</quantidade> </br.com.dextra.loja.modelo.Produto>" http://localhost:8080/carrinhos/1/produtos/3467
+  curl -v -X PUT -d "<br.com.dextra.loja.modelo.Produto> <preco>5.5</preco> <id>3467</id><nome>Cerveja Proibida</nome><quantidade>10</quantidade> </br.com.dextra.loja.modelo.Produto>" http://localhost:8080/carrinhos/1/produtos/3467
+  curl -v -X PUT -d "<br.com.dextra.loja.modelo.Produto> <preco>5.5</preco> <id>3467</id><nome>Cerveja Proibida</nome><quantidade>10</quantidade> </br.com.dextra.loja.modelo.Produto>" http://localhost:8080/carrinhos/1/produtos/3467
+  curl -v -X PUT -d "<br.com.dextra.loja.modelo.Produto> <preco>5.5</preco> <id>6237</id><nome>Cerveja Proibida</nome><quantidade>10</quantidade> </br.com.dextra.loja.modelo.Produto>" http://localhost:8080/carrinhos/1/produtos/6237
+curl -v -X PUT -H "Content-Type: application/xml" -d "<br.com.dextra.loja.modelo.Produto><id>3467</id> <quantidade>100</quantidade> </br.com.dextra.loja.modelo.Produto>" http://localhost:8080/carrinhos/1/produtos/3467/quantidade
+curl -v -X PUT -H "Content-Type: application/xml" -d "<br.com.dextra.loja.modelo.Produto><id>3467</id> <quantidade>100</quantidade> </br.com.dextra.loja.modelo.Produto>" http://localhost:8080/carrinhos/1/produtos/3467/quantidade
+curl -v -X PUT -H "Content-Type: application/xml" -d "<br.com.dextra.loja.modelo.Produto><id>3467</id> <quantidade>100</quantidade> </br.com.dextra.loja.modelo.Produto>" http://localhost:8080/carrinhos/1/produtos/3467/quantidade
+curl -v -X PUT -H "Content-Type: application/xml" -d "<br.com.dextra.loja.modelo.Produto><id>3467</id> <quantidade>100</quantidade> </br.com.dextra.loja.modelo.Produto>" http://localhost:8080/carrinhos/1/produtos/3467/quantidade
+curl -v -X PUT -H "Content-Type: application/json" -d  "{'preco':3.0,'id':6237,'nome':'Cerveja Devassa','quantidade':1000}"  
+curl -v -X PUT -H "Content-Type: application/json" -d  "{'preco':3.0,'id':6237,'nome':'Cerveja Devassa','quantidade':1000}"
+curl -v -X PUT -H "Content-Type: application/json" -d  "{'preco':3.0,'id':6237,'nome':'Cerveja Devassa','quantidade':1000}"http://localhost:8080/carrinhos/1/produtos/3467/quantidade
+curl -v -X PUT -H "Content-Type: application/json" -d  "{'preco':3.0,'id':6237,'nome':'Cerveja Devassa','quantidade':1000}"
+curl -v -X PUT -H "Content-Type: application/json" -d  "{'preco':3.0,'id':6237,'nome':'Cerveja Devassa','quantidade':1000}"http://localhost:8080/carrinhos/1/produtos/3467/quantidade
+curl -v -X PUT -H "Content-Type: application/xml" -d "<br.com.dextra.loja.modelo.Produto><id>3467</id> <quantidade>100</quantidade> </br.com.dextra.loja.modelo.Produto>" http://localhost:8080/carrinhos/1/produtos/3467/quantidade
+curl -v -X PUT -H "Content-Type: application/xml" -d "<br.com.dextra.loja.modelo.Produto><id>3467</id> <quantidade>100</quantidade> </br.com.dextra.loja.modelo.Produto>" http://localhost:8080/carrinhos/1
+curl -v -X PUT -H "Content-Type: application/xml" -d "<br.com.dextra.loja.modelo.Produto><id>3467</id> <quantidade>100</quantidade> </br.com.dextra.loja.modelo.Produto>" http://localhost:8080/carrinhos/1/produtos/3467/quantidade
+cd /opt/
+ls
+locate tomcat
+clear
+cd /home
+cd java01/
+cd apache-tomcat-8.0.39/
+ls -l
+cd bin
+ls
+ls -l
+./ startup.sh
+./startup.sh
+cd /home/
+cd java01/
+cd apache-tomcat-8.0.39/
+ls -i
+cd bin
+./startup.sh
+./startup.bat
+./startup.sh
+cd /opt
+cd a
+ls -i
+cd apache-tomcat-6.0.16/
+ls -i
+cd bin
+ls
+./startup.sh
+cd /home
+cd java01/
+ls
+cd Downloads
+cd apache-tomcat-8.0.39/
+cd in
+./ startup.sh
+./startup.sh
+cd bin
+./startup.sh
+ls -i
+./startup.sh
+./startup.sh
+sudo su ./startup.sh
+tomcat
+tomcat status
+services status
+chmod 777
+chmod 777 *.*
+./startup.sh
+ls -i
+./shutdown.sh
+./startup.sh
+./shutdown.sh
+./startup.sh
+./shutdown.sh
+./startup.sh
+cd /home/java01/Git
+git add .
+git add status
+git status
+git commit -m "OK"
+git commit push
+git push
+cd.
+cd /home/java01/Downloads
+cd apache-tomcat-8.0.39/
+cd bin
+./ shutdown.sh
+./shutdown.sh
+eclipse_neon
+eclipse_neon
+nc -zv localhost 1044
+nc -zv localhost 1044
+nc -zv localhost 1044
+cd Git2
+gitpush
+git push
+git comm
+git status
+git clone git@github.com:raonifn/dextraining-jsf.git 
+git 
+git pull
+git rebase
+git push  git@github.com:raonifn/dextraining-jsf.git 
+git pull git@github.com:raonifn/dextraining-jsf.git 
+git rebase git@github.com:raonifn/dextraining-jsf.git 
+git rebase git@github.com:raonifn/dextraining-jsf.git
+nc -zv localhost 1044
+nc -zv localhost 1044
+nc -zv localhost 1044
+nc -zv localhost 1044
+nc -zv localhost 1044
+nc -zv localhost 1044
+nc -zv localhost 1044
+curl -X POST -d 'Scream' http://localhost:8080/teste.html
+curl -v -X POST -b 'Scream' http://localhost:8080/teste.html
+cd Git2
+git pull git@github.com:raonifn/dextraining-jsf.git
+git pull
+git
+git pull
+git clone git@github.com:raonifn/dextraining-jsf.git
+cd dextraining-jsf/
+mvn clean install
+eclipse:eclipse
+
+mvn
+eclipse_neon
+eclipse_neon
+eclipse_neon
+cd Git2
+ls
+git clone git@github.com:raonifn/dextraining-jsf.git
+mvn clean install
+cd dextraining-jsf/
+mvn clean install
+eclipse:eclipse
+mvn eclipse:eclipse
+nc -zv localhost 1044
+git pull
+git pull
+git pull
+git pull
+cd..
+cd.
+cd /.
+cd Git2
+cd /home
+ls
+cd java01
+cd Git2
+git clone git@github.com:raonifn/dextraining-jsf.git
+mvn clean install
+cd dextraining-jsf/
+mvn clean install
+mvn eclipse:eclipse
+eclipse_neon
+eclipse_neon
+eclipse_neon
+cd git
+cd Git
+git clone git@github.com:raonifn/dextraining-jsf.git
+mvn clean install
+mvn eclipse:eclipse
+
+git clone git@github.com:raonifn/dextraining-jsf.git
+mvn clean install
+cd..
+cd\home
+cd \home
+cd /home
+ls
+cd java01
+mkdir Git2
+cd Git2
+git clone git@github.com:raonifn/dextraining-jsf.git
+mvn clean install
+ls
+cd dextraining-jsf/
+mvn clean install
+mvn eclipse:eclipse
+mvn jetty:run
+export MAVEN_OPTS"-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1044"
+export MAVEN_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1044"
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+export MAVEN_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1044"
+mvn jetty:run
+export MAVEN_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1044"
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+export MAVEN_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1044"
+mvn jetty:run
+git clone git@github.com:raonifn/dextraining-jsf.git
+eclipse_neon
+eclipse_neon
+eclipse_neon
+eclipse_neon
+eclipse_neon
+eclipse_neon
+eclipse_neon
+ls
+cd Git2
+git clone git@github.com:raonifn/dextraining-jsf.git
+ls
+cd dextraining-jsf/
+mvn clean install
+export MAVEN_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1044"
+mvn eclipse:eclipse
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+eclipse_neon
+cd Git
+git add .
+git commit -m "OK"
+git push
+exit
+exit
+cd Git2
+git clone git@github.com:raonifn/dextraining-jsf.git
+push
+git push
+git clone git@github.com:raonifn/dextraining-jsf.git
+mvn clean install
+export MAVEN_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1044"
+mvn eclipse:eclipse
+git pull
+ls
+ls
+git clone git@github.com:raonifn/dextraining-jsf.git
+cd dextraining-jsf/
+export MAVEN_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1044"
+mvn clean install
+mvn eclipse:eclipse
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+export MAVEN_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1044"
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run:8081
+eclipse_neon
+eclipse_neon
+eclipse_neon
+cd Git2
+mvn jetty:run
+mvn clean install
+ls
+cd dextraining-jsf/
+mvn jetty:run
+mvn jetty:run
+mvn jetty:run
+git pull
+cd Git2
+git pull
+cd dextraining-jsf/
+git pull
+git clone git@github.com:raonifn/dextraining-jsf.git
+cd ..
+ls
+git clone git@github.com:raonifn/dextraining-jsf.git
+mvn clean install
+cd dextraining-jsf/
+ls
+
+export MAVEN_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1044"
+mvn eclipse:eclipse
+mvn jetty:run
+mvn jetty:run
+cd ..
+cd ..
+cd Git
+git add.
+git add .
+git status
+git commit -m "OK 21-01-2017"
+git push
+exit
+cd Git WCKS
+ls
+cd..
+ cd ..
+cd Git WCKS
+ls
+cd ..
+cd Git-WCKS/
+git clone git@github.com:wickersand/Java_web.git
+ls
+cd Java_web/
+git add .
+git status
+git commit -m "OK 21-01-2017"
+git push
+eclipse_neon
+eclipse_neon
+cd JavaWeb
+cd aula01-EJB3/
+cd blog/
+ls
+gedit deploy.sh 
+./deploy.sh
+chkmod 777 deploy.sh
+chmod 777 deploy.sh
+./deploy.sh
+gedit deploy.sh 
+./deploy.sh
+./deploy.sh
+gedit deploy.sh 
+./deploy.sh
+gedit deploy.sh 
+./deploy.sh
+cd..
+cd ..
+git remote add origin git@github.com:screambr/EJB.git
+git add.
+git add .
+git status
+git commit -m "EJB 11-02-17"
+git push
+git status
+git add .
+git commit -m "EJB 11-02-17
+git commit -m "EJB 11-02-17"
+git status
+git add .
+git status
+ls
+git push
+git init
+git add .
+git status
+git add.
+git add *
+git status
+cd /shared_all/ejb
+chmod 777 aula01.zip 
+cd\home
+cd /home
+cd java01/
+cd JavaWeb
+cd aula01-EJB3/
+ls
+cd blog
+ls
+mvn clean install
+mvn eclipse:eclipse
+git status
+cd ..
+git status
+git help
+git init
+git add.
