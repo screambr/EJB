@@ -4,10 +4,16 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Post implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
+	@Id
+	@GeneratedValue
 	private Long id;
 
 	private String titulo;
@@ -64,7 +70,6 @@ public class Post implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Post [id=" + id + ", titulo=" + titulo + ", descricao="
-				+ descricao + ", data=" + data + "]";
+		return "Post [id=" + id + ", titulo=" + titulo + ", descricao=" + descricao + ", data=" + data + "]";
 	}
 }

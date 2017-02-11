@@ -2,10 +2,13 @@ package br.com.dextra.treinamento.controller.bean;
 
 import java.util.List;
 
+import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import br.com.dextra.treinamento.model.domain.Post;
+import br.com.dextra.treinamento.model.service.jpa.PostServiceLocal;
 
 @ManagedBean(name = "listarPostsMB")
 @SessionScoped
@@ -23,7 +26,11 @@ public class ListarPostsMB {
 
 	private Post novoPost;
 
+	@EJB
+	private PostServiceLocal postServiceLocal;
+
 	public String listar() {
+		posts = this.postServiceLocal.listar();
 		return LISTAR_POSTS;
 	}
 
@@ -33,19 +40,33 @@ public class ListarPostsMB {
 	}
 
 	public String salvar() {
-		return LISTAR_POSTS;
+		this.postServiceLocal.salvar(novoPost);
+		return listar();
 	}
 
 	public String cancelar() {
 		return LISTAR_POSTS;
 	}
 
-	public void prepararAlteracao() {
+	public String prepararAlteracao() {
+		post = this.postServiceLocal.BuscarPorId(Long.valueOf(this.ObterParametro("id")));
+		return "alterarPost.xhtml";
 
 	}
+	public String alterar(){
+		this.postServiceLocal.salvar(post);
+		return listar();
+	}
 
-	public void remover() {
+	public String remover() {
+		
+		this.postServiceLocal.excluir(Long.valueOf(this.ObterParametro("id")));
+		return listar();
 
+	}
+	private String ObterParametro(String nome){
+		
+		return FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get(nome);
 	}
 
 	public String voltar() {
