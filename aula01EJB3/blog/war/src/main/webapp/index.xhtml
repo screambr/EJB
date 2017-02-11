@@ -8,11 +8,16 @@
         <title>Blog</title>
     </h:head>
     <h:body>
-        <h2>Bem vindo ao blog</h2>
+        <h2>Bem vindo ao Blog</h2>
         
 	        <h3>Exemplo JPA - Blog</h3>
 	        <h:form>
 	        	<h:commandButton value="Ver posts" action="#{listarPostsMB.listar}" />
+	        </h:form>
+	        <h3>Stateless x Stateful</h3>
+	        <h:form>
+	        	<h:commandButton value="stateless" action="#{testarSessionBeanMB.testarStateless}" />
+	        	<h:commandButton value="stateful" action="#{testarSessionBeanMB.testarStateful}" />
 	        </h:form>
 	        
     </h:body>
