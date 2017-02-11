@@ -1,0 +1,22 @@
+!SESSION 2017-02-11 13:37:18.841 -----------------------------------------------
+eclipse.buildId=4.6.1.M20160907-1200
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=pt_BR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jst.jsf.common 4 0 2017-02-11 13:58:35.362
+!MESSAGE Unable to load external metadata model refs for http://java.sun.com/jsf/html into HTML
+
+!ENTRY org.eclipse.jface.text 2 0 2017-02-11 14:01:06.373
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2017-02-11 14:01:06.374
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.jface.text 2 0 2017-02-11 14:01:06.612
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2017-02-11 14:01:06.613
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'

@@ -1,0 +1,9 @@
+package br.com.dextra.treinamento.model.service.sessionbean;
+
+import javax.ejb.Stateless;
+
+@Stateless
+public class TestarStatelessImpl implements TestarStatelessLocal {
+	
+	
+}

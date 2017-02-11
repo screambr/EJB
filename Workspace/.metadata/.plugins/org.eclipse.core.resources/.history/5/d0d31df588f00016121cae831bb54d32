@@ -1,0 +1,39 @@
+package br.com.dextra.treinamento.model.service.jpa;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import br.com.dextra.treinamento.model.domain.Post;
+
+@Stateless
+public class PostServiceImpl implements PostServiceLocal {
+	@PersistenceContext(unitName = "blog-pu")
+	private EntityManager em;
+	
+	private List<Post> posts = new ArrayList<Post>();
+
+	public void salvar(Post p) {
+		// posts.add(p);
+		em.merge(p);
+	}
+
+	public List<Post> listar() {
+		// return posts;
+		return null;
+	}
+
+	@Override
+	public void excluir(Long id) {
+
+	}
+
+	@Override
+	public Post BuscarPorId(Long id) {
+
+		return null;
+	}
+}

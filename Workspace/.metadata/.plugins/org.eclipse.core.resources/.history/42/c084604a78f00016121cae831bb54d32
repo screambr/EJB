@@ -1,0 +1,10 @@
+package br.com.dextra.treinamento.model.service.sessionbean;
+
+public class TestarStatefulImpl implements TestarStatefulLocal{
+Integer contador = 0;
+@Override
+public Integer adicionar(){
+	contador++;
+	return contador;
+}
+}

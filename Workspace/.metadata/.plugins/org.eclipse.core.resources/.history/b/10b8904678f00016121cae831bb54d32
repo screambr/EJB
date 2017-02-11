@@ -1,0 +1,33 @@
+package br.com.dextra.treinamento.controller.bean;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
+import org.omg.CORBA.CTX_RESTRICT_SCOPE;
+
+import br.com.dextra.treinamento.model.service.sessionbean.TestarStatelessLocal;
+
+@ManagedBean(name = "testarSessionBeanMB")
+@RequestScoped
+public class TestarSessionBeanMB {
+	
+public void testarStateless(){
+	try {
+		List<Integer> lista = new ArrayList<Integer>();
+		InitialContext ctx = new InitialContext();
+		testarStatelessLocal local = (TestarStatelessLocal) ctx.lookup("blog/");
+	} catch (NamingException e) {
+		e.printStackTrace();
+	}
+	
+}
+public void testarStateful(){
+	
+}
+
+}
