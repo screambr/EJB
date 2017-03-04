@@ -1,178 +1,3 @@
-psql -h localhost -U java01 -c "CREATE DATABASE CURSO_JPA02"
-psql -U -d curso_java -W
-psql -U -d curso_java -W
-psql -U  curso_java -W
-psql  curso_java -W
-psql
-psql -U java01 -d curso_java_S -W
-psql -U java01 -d curso_java_sS -W
-psql -U java01 -d curso_java_s -W
-psql -d curso_java_s -W
-psql -h localhost -c "CREATE DATABASE CURSO_JPA02"
-psql -h localhost -c "CREATE DATABASE CURSO_JPA02"
-psql -h 10.1.2.146 -c "CREATE DATABASE CURSO_JPA_S"
-psql -h 10.1.2.146 -d curso_java03 -W
-psql -h 10.1.2.146 -d curso_java -W
-eclipse_neon 
-psql -h 10.1.2.146 -d curso_java -W
-psql -h 10.1.2.146 -d curso_java03 -W
-ping 10.2.2.186
-ping 10.1.2.186
-ping 10.2.1.186
-ping 10.1.2.146
-psql -h 10.1.2.146 -d curso_java03 -W
-psql -h 10.1.2.146 -d curso_java03 -W
-psql -h 127.0.0.1 -d curso_java03 -W
-psql -h 127.0.0.1 -d curso_java -W
-psql -h localhost -d curso_java -W
-psql -U java01 -d curso_java03 -W
-psql -U java01 -d curso_java -W
-psql -h 10.1.2.146 -d curso_java -W
-arp -a
-ping 10.1.2.146
-psql -h 10.1.2.146 -d curso_java -W
-psql -h 10.2.1.146 -d curso_java03 -W
-psql -h 10.1.2.146 -d curso_java03 -W
-psql -d curso_java -W
-psql -d JPA_EXERCICIOS -W
-psql -d garagem_jpa -W
-psql -d garagem-jpa -W
-psql -d garagem-jpa_test -W
-psql -d garagem-jpa_teste -W
-psql -d garagem-jpa -W
-psql -d JPA_EXERCICIOS -W
-psql -d JPA_EXERCICIOS -W
-psql -d curso_java_s -W
-psql -d curso_java_s -W
-psql -d curso_java_s -W
-psql -d curso_java_s -W
-psql -d curso_java_s -W
-\d
-\d
-\d
-\d
-\d
-\q
-\q
-git add .
-cd Git
-git add .
-git status
-git commit -m "OK
-git push
-eclipse_neon 
-pgadmin
-ifconfig
-psql -d curso_java_s -W
-psql -d passagens-aereas -W
-git add .
-cd Git
-git add .
-git status
-git commit -m "OK
-git commit -m "OK"
-git push
-exit
-eclipse_neon $
-eclipse_neon$
-eclipse_neon
-eclipse_neon
-eclipse cd
-eclipse_neon
-eclipse_neon
-eclipse_neon&
-eclipse_neon$
-eclipse_neon
-eclipse_neon
-killall eclipse_neon
-eclipse_neon
-eclipse_neon
-eclipse_neon
-eclipse_neon
-eclipse_neon
-eclipse_neon
-eclipse_neon
-eclipse_neon
-cd Git
-git add .
-git status
-git commit -m "OK"
-git push
-exit
-cd Git
-curl
-curl --help
-curl -v -x DELETE http://localhost:8080/curl -v -X DELETE http://localhost:8080/carrinhos/1/produtos/3467
-curl -v -X DELETE http://localhost:8080/carrinhos/1/produtos/3467
-curl -v -X DELETE http://localhost:8080/carrinhos/1/produtos/6237
-curl -v -X DELETE http://localhost:8080/carrinhos/1/produtos/6237
-  
-  curl -v -X PUT -d "<br.com.dextra.loja.modelo.Produto> <preco>5.5</preco> <id>3467</id><nome>Cerveja Proibida</nome><quantidade>10</quantidade> </br.com.dextra.loja.modelo.Produto>" http://localhost:8080/carrinhos/1/produtos/3467
-  curl -v -X PUT -d "<br.com.dextra.loja.modelo.Produto> <preco>5.5</preco> <id>3467</id><nome>Cerveja Proibida</nome><quantidade>10</quantidade> </br.com.dextra.loja.modelo.Produto>" http://localhost:8080/carrinhos/1/produtos/3467
-  curl -v -X PUT -d "<br.com.dextra.loja.modelo.Produto> <preco>5.5</preco> <id>3467</id><nome>Cerveja Proibida</nome><quantidade>10</quantidade> </br.com.dextra.loja.modelo.Produto>" http://localhost:8080/carrinhos/1/produtos/3467
-  curl -v -X PUT -d "<br.com.dextra.loja.modelo.Produto> <preco>5.5</preco> <id>6237</id><nome>Cerveja Proibida</nome><quantidade>10</quantidade> </br.com.dextra.loja.modelo.Produto>" http://localhost:8080/carrinhos/1/produtos/6237
-curl -v -X PUT -H "Content-Type: application/xml" -d "<br.com.dextra.loja.modelo.Produto><id>3467</id> <quantidade>100</quantidade> </br.com.dextra.loja.modelo.Produto>" http://localhost:8080/carrinhos/1/produtos/3467/quantidade
-curl -v -X PUT -H "Content-Type: application/xml" -d "<br.com.dextra.loja.modelo.Produto><id>3467</id> <quantidade>100</quantidade> </br.com.dextra.loja.modelo.Produto>" http://localhost:8080/carrinhos/1/produtos/3467/quantidade
-curl -v -X PUT -H "Content-Type: application/xml" -d "<br.com.dextra.loja.modelo.Produto><id>3467</id> <quantidade>100</quantidade> </br.com.dextra.loja.modelo.Produto>" http://localhost:8080/carrinhos/1/produtos/3467/quantidade
-curl -v -X PUT -H "Content-Type: application/xml" -d "<br.com.dextra.loja.modelo.Produto><id>3467</id> <quantidade>100</quantidade> </br.com.dextra.loja.modelo.Produto>" http://localhost:8080/carrinhos/1/produtos/3467/quantidade
-curl -v -X PUT -H "Content-Type: application/json" -d  "{'preco':3.0,'id':6237,'nome':'Cerveja Devassa','quantidade':1000}"  
-curl -v -X PUT -H "Content-Type: application/json" -d  "{'preco':3.0,'id':6237,'nome':'Cerveja Devassa','quantidade':1000}"
-curl -v -X PUT -H "Content-Type: application/json" -d  "{'preco':3.0,'id':6237,'nome':'Cerveja Devassa','quantidade':1000}"http://localhost:8080/carrinhos/1/produtos/3467/quantidade
-curl -v -X PUT -H "Content-Type: application/json" -d  "{'preco':3.0,'id':6237,'nome':'Cerveja Devassa','quantidade':1000}"
-curl -v -X PUT -H "Content-Type: application/json" -d  "{'preco':3.0,'id':6237,'nome':'Cerveja Devassa','quantidade':1000}"http://localhost:8080/carrinhos/1/produtos/3467/quantidade
-curl -v -X PUT -H "Content-Type: application/xml" -d "<br.com.dextra.loja.modelo.Produto><id>3467</id> <quantidade>100</quantidade> </br.com.dextra.loja.modelo.Produto>" http://localhost:8080/carrinhos/1/produtos/3467/quantidade
-curl -v -X PUT -H "Content-Type: application/xml" -d "<br.com.dextra.loja.modelo.Produto><id>3467</id> <quantidade>100</quantidade> </br.com.dextra.loja.modelo.Produto>" http://localhost:8080/carrinhos/1
-curl -v -X PUT -H "Content-Type: application/xml" -d "<br.com.dextra.loja.modelo.Produto><id>3467</id> <quantidade>100</quantidade> </br.com.dextra.loja.modelo.Produto>" http://localhost:8080/carrinhos/1/produtos/3467/quantidade
-cd /opt/
-ls
-locate tomcat
-clear
-cd /home
-cd java01/
-cd apache-tomcat-8.0.39/
-ls -l
-cd bin
-ls
-ls -l
-./ startup.sh
-./startup.sh
-cd /home/
-cd java01/
-cd apache-tomcat-8.0.39/
-ls -i
-cd bin
-./startup.sh
-./startup.bat
-./startup.sh
-cd /opt
-cd a
-ls -i
-cd apache-tomcat-6.0.16/
-ls -i
-cd bin
-ls
-./startup.sh
-cd /home
-cd java01/
-ls
-cd Downloads
-cd apache-tomcat-8.0.39/
-cd in
-./ startup.sh
-./startup.sh
-cd bin
-./startup.sh
-ls -i
-./startup.sh
-./startup.sh
-sudo su ./startup.sh
-tomcat
-tomcat status
-services status
-chmod 777
-chmod 777 *.*
-./startup.sh
-ls -i
 ./shutdown.sh
 ./startup.sh
 ./shutdown.sh
@@ -498,3 +323,178 @@ git status
 git help
 git init
 git add.
+cd Desktop/
+
+ls
+cd server
+ls
+cd default/
+ls
+cd deploy
+ls
+git commit -m "EJB 11-02-17"
+git push -u
+git init
+cd /home
+cd java01/
+cd JavaWeb
+cd aula01-EJB3/
+git commit -m "EJB 11-02-17"
+git push -u
+git
+git rebase
+git remote add origin git@github.com:screambr/EJB.git
+git
+git add .
+git status
+git
+git branch
+git branch * master
+git branch * master -a
+git
+git diff
+git init
+git reset
+git add.
+git add .
+git status
+ls
+cd blog/
+git remote add origin git@github.com:screambr/EJB.git
+git
+cd..
+cd ..
+cd ..
+cd ..
+cd EJB
+git init
+git remote add origin git@github.com:screambr/EJB.git
+ls
+cd aula01EJB3/
+cd blog/
+cd..
+mvn clean install
+mvn eclipse:eclipse
+cd ..
+cd ..
+cd ..
+ls
+cd EJB/
+cd aula01EJB3/
+cd blog/
+ls
+chmod 777 deploy.sh 
+./deploy.sh
+cd..
+cd..
+cd..
+cd ..
+cd ..
+ls
+git add.
+git add .
+git status
+git add .
+git commit -m "EJB 11-02-17"
+git push
+git add .
+git commit -m "EJB 11-02-17"
+git push
+git push -f
+ git checkout master
+git push origin +HEAD
+cat ~/.bash_history > digitado.txt
+gedit digitado.txt 
+git add .
+git commit -m "EJB 11-02-17"
+git push
+cd aula01EJB3/
+cd blog/
+ls
+./deploy.sh
+./deploy.sh
+./deploy.sh
+mvn clean install
+./deploy.sh
+mvn clean install
+./deploy.sh
+mvn clean install
+./deploy.sh
+mvn clean install
+./deploy.sh
+mvn clean install
+./deploy.sh
+mvn clean install
+./deploy.sh
+mvn clean install
+./deploy.sh
+mvn clean install
+./deploy.sh
+mvn clean install
+./deploy.sh
+mvn clean install
+./deploy.sh
+mvn clean install
+./deploy.sh
+mvn clean install
+./deploy.sh
+mvn clean install
+./deploy.sh
+mvn clean install
+./deploy.sh
+mvn clean install
+./deploy.sh
+cd ..
+ls
+git add.
+git add .
+git status
+git commit -m "EJB 11-02-17
+
+git commit -m "EJB 11-02-17"
+git push
+git add .
+git status
+git commit -m "EJB 11-02-17"
+git push
+git add .
+cd ..
+ls
+git add .
+git status
+git commit -m "EJB 11-02-17"
+git push
+cd Git2
+git push
+cd dextraining-jsf/
+git push
+git pull
+mvn jetty:run
+cd..
+cd.
+cd .
+cd ..
+cd ..
+cd JavaWeb
+ls
+cd\jboss
+cd ..
+ls
+cd Desktop/
+cd jboss/
+ls
+cd bi
+ls
+cd bin/
+ls
+run.sh
+.\run.sh
+.run.sh
+./run.sh
+./run.sh
+eclipse_neon
+eclipse_neon
+eclipse_neon
+eclipse_neon
+eclipse_neon
+eclipse_neon

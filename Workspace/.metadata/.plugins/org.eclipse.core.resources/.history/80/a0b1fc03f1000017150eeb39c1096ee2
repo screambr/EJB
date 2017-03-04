@@ -1,0 +1,29 @@
+package br.com.dextra.treinamento.controller.bean;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+
+import br.com.dextra.treinamento.model.service.timer.TesteTimerLocal;
+
+@ManagedBean(name = "testarTimerMB")
+@RequestScoped
+public class TestarTimerMB {
+	
+	private TesteTimerLocal testeTimerLocal;
+	
+	public void agendar(){
+		long inicio = 0;
+		long intervalo = 1*30*1000;
+		testeTimerLocal.agendar(inicio, intervalo);
+		
+	}
+	
+public void cancelar(){
+	testeTimerLocal.cancelar();
+	System.out.println("timer cancelado :/");
+		
+	}
+	
+	
+
+}

@@ -1,0 +1,44 @@
+package br.com.dextra.treinamento.model.service.timer;
+
+import java.util.Collection;
+
+import javax.annotation.Resource;
+import javax.ejb.SessionContext;
+import javax.ejb.Stateless;
+import javax.ejb.Timeout;
+import javax.ejb.Timer;
+import javax.ejb.TimerService;
+
+@Stateless
+public class TeteTimerImpl implements TesteTimerLocal {
+	
+	@Resource
+	private SessionContext ctx;
+	
+	private static final String NOME_TIMER = "TesteTimerImpl";
+
+	@Override
+	public void agendar(long inicio, long intervalo, String nome) {
+		TimerService timerService = ctx.getTimerService();
+		timerService.createTimer(inicio,  intervalo, NOME_TIMER);
+		
+		
+		
+	}
+	@Timeout
+	private void executar(Timer timer){
+		System.out.println("Timer executado...");
+	}
+	@Override
+	public void cancelar() {
+		TimerService timerService = ctx.getTimerService();
+		Collection timers = timerService.getTimers();
+		for (Object t: timers){
+			Timer timer = (Timer) t;
+			if(timer.getInfo().equals(NOME_TIMER)){
+				timer.cancel();
+			}
+		}
+	}
+
+}

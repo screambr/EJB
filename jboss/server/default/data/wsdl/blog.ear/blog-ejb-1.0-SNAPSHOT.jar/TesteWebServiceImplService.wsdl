@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="TesteWebServiceImplService" targetNamespace="http://service.model.treinamento.dextra.com.br" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.model.treinamento.dextra.com.br" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:message name="testarChamadaWSResponse">
+  </wsdl:message>
+  <wsdl:message name="criarPostResponse">
+  </wsdl:message>
+  <wsdl:message name="testarChamadaWS">
+  </wsdl:message>
+  <wsdl:message name="criarPost">
+    <wsdl:part name="titulo" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="descricao" type="xsd:string">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="TesteWebServiceImpl">
+    <wsdl:operation name="criarPost">
+      <wsdl:input message="tns:criarPost" name="criarPost">
+    </wsdl:input>
+      <wsdl:output message="tns:criarPostResponse" name="criarPostResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testarChamadaWS">
+      <wsdl:input message="tns:testarChamadaWS" name="testarChamadaWS">
+    </wsdl:input>
+      <wsdl:output message="tns:testarChamadaWSResponse" name="testarChamadaWSResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TesteWebServiceImplServiceSoapBinding" type="tns:TesteWebServiceImpl">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="criarPost">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input name="criarPost">
+        <soap:body namespace="http://service.model.treinamento.dextra.com.br" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="criarPostResponse">
+        <soap:body namespace="http://service.model.treinamento.dextra.com.br" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testarChamadaWS">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input name="testarChamadaWS">
+        <soap:body namespace="http://service.model.treinamento.dextra.com.br" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="testarChamadaWSResponse">
+        <soap:body namespace="http://service.model.treinamento.dextra.com.br" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TesteWebServiceImplService">
+    <wsdl:port binding="tns:TesteWebServiceImplServiceSoapBinding" name="TesteWebServiceImplPort">
+      <soap:address location="http://localhost:8080/blog-ejb-1.0-SNAPSHOT/TesteWebServiceImplService/TesteWebServiceImpl" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
