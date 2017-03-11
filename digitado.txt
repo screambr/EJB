@@ -1,153 +1,3 @@
-./shutdown.sh
-./startup.sh
-./shutdown.sh
-./startup.sh
-./shutdown.sh
-./startup.sh
-cd /home/java01/Git
-git add .
-git add status
-git status
-git commit -m "OK"
-git commit push
-git push
-cd.
-cd /home/java01/Downloads
-cd apache-tomcat-8.0.39/
-cd bin
-./ shutdown.sh
-./shutdown.sh
-eclipse_neon
-eclipse_neon
-nc -zv localhost 1044
-nc -zv localhost 1044
-nc -zv localhost 1044
-cd Git2
-gitpush
-git push
-git comm
-git status
-git clone git@github.com:raonifn/dextraining-jsf.git 
-git 
-git pull
-git rebase
-git push  git@github.com:raonifn/dextraining-jsf.git 
-git pull git@github.com:raonifn/dextraining-jsf.git 
-git rebase git@github.com:raonifn/dextraining-jsf.git 
-git rebase git@github.com:raonifn/dextraining-jsf.git
-nc -zv localhost 1044
-nc -zv localhost 1044
-nc -zv localhost 1044
-nc -zv localhost 1044
-nc -zv localhost 1044
-nc -zv localhost 1044
-nc -zv localhost 1044
-curl -X POST -d 'Scream' http://localhost:8080/teste.html
-curl -v -X POST -b 'Scream' http://localhost:8080/teste.html
-cd Git2
-git pull git@github.com:raonifn/dextraining-jsf.git
-git pull
-git
-git pull
-git clone git@github.com:raonifn/dextraining-jsf.git
-cd dextraining-jsf/
-mvn clean install
-eclipse:eclipse
-
-mvn
-eclipse_neon
-eclipse_neon
-eclipse_neon
-cd Git2
-ls
-git clone git@github.com:raonifn/dextraining-jsf.git
-mvn clean install
-cd dextraining-jsf/
-mvn clean install
-eclipse:eclipse
-mvn eclipse:eclipse
-nc -zv localhost 1044
-git pull
-git pull
-git pull
-git pull
-cd..
-cd.
-cd /.
-cd Git2
-cd /home
-ls
-cd java01
-cd Git2
-git clone git@github.com:raonifn/dextraining-jsf.git
-mvn clean install
-cd dextraining-jsf/
-mvn clean install
-mvn eclipse:eclipse
-eclipse_neon
-eclipse_neon
-eclipse_neon
-cd git
-cd Git
-git clone git@github.com:raonifn/dextraining-jsf.git
-mvn clean install
-mvn eclipse:eclipse
-
-git clone git@github.com:raonifn/dextraining-jsf.git
-mvn clean install
-cd..
-cd\home
-cd \home
-cd /home
-ls
-cd java01
-mkdir Git2
-cd Git2
-git clone git@github.com:raonifn/dextraining-jsf.git
-mvn clean install
-ls
-cd dextraining-jsf/
-mvn clean install
-mvn eclipse:eclipse
-mvn jetty:run
-export MAVEN_OPTS"-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1044"
-export MAVEN_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1044"
-mvn jetty:run
-mvn jetty:run
-mvn jetty:run
-mvn jetty:run
-export MAVEN_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1044"
-mvn jetty:run
-export MAVEN_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1044"
-mvn jetty:run
-mvn jetty:run
-mvn jetty:run
-mvn jetty:run
-mvn jetty:run
-mvn jetty:run
-mvn jetty:run
-mvn jetty:run
-mvn jetty:run
-mvn jetty:run
-mvn jetty:run
-export MAVEN_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1044"
-mvn jetty:run
-git clone git@github.com:raonifn/dextraining-jsf.git
-eclipse_neon
-eclipse_neon
-eclipse_neon
-eclipse_neon
-eclipse_neon
-eclipse_neon
-eclipse_neon
-ls
-cd Git2
-git clone git@github.com:raonifn/dextraining-jsf.git
-ls
-cd dextraining-jsf/
-mvn clean install
-export MAVEN_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1044"
-mvn eclipse:eclipse
 mvn jetty:run
 mvn jetty:run
 mvn jetty:run
@@ -498,3 +348,153 @@ eclipse_neon
 eclipse_neon
 eclipse_neon
 eclipse_neon
+cd EJB/
+cd aula01EJB3/
+cd blog/
+mvn clean install
+./ deploy.sh 
+./deploy.sh 
+mvn clean install
+mvn eclipse:eclipse
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+mvn clean install
+./deploy.sh 
+ls
+cd\home
+cd \home
+cd /home
+ls
+ cd ja
+ cd java01/
+ls
+cd Desktop/
+cd jboss/
+ls
+cd bin/
+ls
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+eclipse_neon
+cd EJB/
+ls
+cd aula01EJB3/
+ls
+cd blog/
+ls
+./deploy.sh 
+./deploy.sh 
+cd..
+c..
+cd.
+
+ls
+cd EJB/
+clean
+clear
+cat ~/.bash_history > digitado.txt
+ls
+git add .
+git statu
+git status
+git commit -m "EJB 04-03-17"
+git push
+git pull
+git clone git@github.com:screambr/EJB.git
+eclipse_neon
+eclipse_neon
+ls
+cd EJB
+cd aula01EJB3/
+cd blog/
+mvn clean install
+mvn eclipse:eclipse
+mvn clean install
+ls
+cd.
+cd /home
+cd java01/
+cd EJB
+cd aula01EJB3/
+cd blog/
+mvn clean install
+mvn eclipse:eclipse
+cd /home/
+cd java01/
+cd Desktop/
+cd jboss/
+ls
+cd bin
+ls
+./ run.sh 
+./run.sh 
