@@ -25,12 +25,12 @@ public class ListarPostsMB {
 	private Post post = new Post();
 
 	private Post novoPost;
-
+	
 	@EJB
 	private PostServiceLocal postServiceLocal;
 
 	public String listar() {
-		posts = this.postServiceLocal.listar();
+		posts =  this.postServiceLocal.listar();
 		return LISTAR_POSTS;
 	}
 
@@ -49,23 +49,21 @@ public class ListarPostsMB {
 	}
 
 	public String prepararAlteracao() {
-		post = this.postServiceLocal.BuscarPorId(Long.valueOf(this.ObterParametro("id")));
+		post = this.postServiceLocal.buscarPorId(Long.valueOf(this.obterParametro("id")));
 		return "alterarPost.xhtml";
-
 	}
-	public String alterar(){
+	
+	public String alterar() {
 		this.postServiceLocal.salvar(post);
 		return listar();
 	}
 
 	public String remover() {
-		
-		this.postServiceLocal.excluir(Long.valueOf(this.ObterParametro("id")));
+		this.postServiceLocal.excluir(Long.valueOf(this.obterParametro("id")));
 		return listar();
-
 	}
-	private String ObterParametro(String nome){
-		
+	
+	private String obterParametro(String nome) {
 		return FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get(nome);
 	}
 

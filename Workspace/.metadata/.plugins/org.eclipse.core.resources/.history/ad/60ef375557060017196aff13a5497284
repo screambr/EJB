@@ -1,0 +1,5 @@
+package br.com.dextra.treinamento.model.domain;
+
+public class PostAudit {
+
+}
