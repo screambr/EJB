@@ -3,6 +3,8 @@ package br.com.dextra.treinamento.controller.bean;
 import java.util.List;
 
 import javax.ejb.EJB;
+import javax.ejb.EJBAccessException;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
@@ -25,12 +27,12 @@ public class ListarPostsMB {
 	private Post post = new Post();
 
 	private Post novoPost;
-	
+
 	@EJB
 	private PostServiceLocal postServiceLocal;
 
 	public String listar() {
-		posts =  this.postServiceLocal.listar();
+		posts = this.postServiceLocal.listar();
 		return LISTAR_POSTS;
 	}
 
@@ -52,17 +54,29 @@ public class ListarPostsMB {
 		post = this.postServiceLocal.buscarPorId(Long.valueOf(this.obterParametro("id")));
 		return "alterarPost.xhtml";
 	}
-	
+
 	public String alterar() {
 		this.postServiceLocal.salvar(post);
 		return listar();
 	}
 
 	public String remover() {
-		this.postServiceLocal.excluir(Long.valueOf(this.obterParametro("id")));
+		try {
+			this.postServiceLocal.excluir(Long.valueOf(this.obterParametro("id")));
+
+		} catch (EJBAccessException e) {
+			adicionarMensagem("USUARIO SEM PERMISSAO A ESSA FUNCIONALIDADE");
+
+		}
 		return listar();
 	}
-	
+
+	private void adicionarMensagem(String mensagem) {
+		FacesContext facesContext = FacesContext.getCurrentInstance();
+		FacesMessage facesMessage = new FacesMessage(mensagem);
+		facesContext.addMessage(null, facesMessage);
+	}
+
 	private String obterParametro(String nome) {
 		return FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get(nome);
 	}

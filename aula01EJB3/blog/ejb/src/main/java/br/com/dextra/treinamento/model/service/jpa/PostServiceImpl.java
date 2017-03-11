@@ -2,6 +2,7 @@ package br.com.dextra.treinamento.model.service.jpa;
 
 import java.util.List;
 
+import javax.annotation.security.RolesAllowed;
 import javax.ejb.Stateless;
 import javax.interceptor.Interceptors;
 import javax.persistence.EntityManager;
@@ -32,6 +33,7 @@ public class PostServiceImpl implements PostServiceLocal {
 	}
 
 	@Override
+	@RolesAllowed("administrador")
 	@Interceptors(value = {AuditInterceptor.class})
 	public void excluir(Long id) {
 		Post post = buscarPorId(id);

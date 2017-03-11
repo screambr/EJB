@@ -19,6 +19,16 @@ public class PostAudit {
 	
 	private String parametros;
 	
+	private String login;
+	
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
 	private Date data = new Date();
 	
 	public Long getId() {

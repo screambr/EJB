@@ -1,0 +1,1067 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0xb6c4a767, pid=16169, tid=2262825792
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_25-b17) (build 1.8.0_25-b17)
+# Java VM: Java HotSpot(TM) Server VM (25.25-b02 mixed mode linux-x86 )
+# Problematic frame:
+# V  [libjvm.so+0x4a8767]  InstanceKlass::oop_follow_contents(ParCompactionManager*, oopDesc*)+0xf7
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0xb6611800):  GCTaskThread [stack: 0x86d7f000,0x86e00000] [id=16172]
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 2 (SEGV_ACCERR), si_addr: 0x9575927c
+
+Registers:
+EAX=0x85c00000, EBX=0x01000000, ECX=0xb66a7718, EDX=0x95759278
+ESP=0x86dff160, EBP=0x86dff188, ESI=0x896c86c0, EDI=0x896c86b4
+EIP=0xb6c4a767, EFLAGS=0x00010246, CR2=0x9575927c
+
+Top of Stack: (sp=0x86dff160)
+0x86dff160:   00000020 b66a7738 00000020 8565e968
+0x86dff170:   8565e970 896c86c0 b66a7738 76940097
+0x86dff180:   b66a7718 b66a7720 86dff228 b6f119a8
+0x86dff190:   8565e828 b66a7718 896c86a8 00000098
+0x86dff1a0:   b6612528 b6612528 ffffffff ffffffff
+0x86dff1b0:   b6612520 b66d7980 b6612528 b7737cbf
+0x86dff1c0:   b66a7778 b6612500 00002000 0000000c
+0x86dff1d0:   0000000c 88db4698 b66a7738 86dff208 
+
+Instructions: (pc=0xb6c4a767)
+0xb6c4a747:   89 da 83 e3 1f 88 d9 b8 01 00 00 00 d3 e0 c1 ea
+0xb6c4a757:   05 89 c3 a1 b8 a9 15 b7 85 1c 90 75 bc 8b 56 04
+0xb6c4a767:   8b 5a 04 83 fb 00 0f 8e 5d 01 00 00 f6 c3 01 0f
+0xb6c4a777:   85 b4 00 00 00 c1 fb 02 50 53 56 68 a0 a9 15 b7 
+
+Register to memory mapping:
+
+EAX=0x85c00000 is an unknown value
+EBX=0x01000000 is an unknown value
+ECX=0xb66a7718 is an unknown value
+EDX=0x95759278 is an unallocated location in the heap
+ESP=0x86dff160 is an unknown value
+EBP=0x86dff188 is an unknown value
+ESI=
+[error occurred during error reporting (printing register info), id 0xb]
+
+Stack: [0x86d7f000,0x86e00000],  sp=0x86dff160,  free space=512k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x4a8767]  InstanceKlass::oop_follow_contents(ParCompactionManager*, oopDesc*)+0xf7
+V  [libjvm.so+0x76f9a8]  ParCompactionManager::follow_marking_stacks()+0x128
+V  [libjvm.so+0x759979]  MarkFromRootsTask::do_it(GCTaskManager*, unsigned int)+0x69
+V  [libjvm.so+0x43c076]  GCTaskThread::run()+0x106
+V  [libjvm.so+0x723a29]  java_start(Thread*)+0x119
+C  [libpthread.so.0+0x6d4c]  start_thread+0xcc
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x85266000 JavaThread "GC Daemon" daemon [_thread_blocked, id=16186, stack(0x8256a000,0x825bb000)]
+  0x8372d800 JavaThread "AuthenticationCacheFlushThread" [_thread_blocked, id=16183, stack(0x84218000,0x84269000)]
+  0x09649000 JavaThread "Thread-2" [_thread_blocked, id=16182, stack(0x84c55000,0x84ca6000)]
+  0xb6606400 JavaThread "DestroyJavaVM" [_thread_blocked, id=16170, stack(0xb6725000,0xb6776000)]
+  0x8528d400 JavaThread "main" [_thread_blocked, id=16181, stack(0x86d2e000,0x86d7f000)]
+  0x85239000 JavaThread "Service Thread" daemon [_thread_blocked, id=16179, stack(0x84d8a000,0x84ddb000)]
+  0x85236000 JavaThread "C1 CompilerThread1" daemon [_thread_blocked, id=16178, stack(0x84ddb000,0x84e5c000)]
+  0x85234000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=16177, stack(0x84e5c000,0x84edd000)]
+  0x85232800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=16176, stack(0x86f2e000,0x86f7f000)]
+  0x85216800 JavaThread "Finalizer" daemon [_thread_blocked, id=16175, stack(0x850dd000,0x8512e000)]
+  0x85215000 JavaThread "Reference Handler" daemon [_thread_blocked, id=16174, stack(0x8512e000,0x8517f000)]
+
+Other Threads:
+  0x85210c00 VMThread [stack: 0x8517f000,0x85200000] [id=16173]
+  0x8523b000 WatcherThread [stack: 0x84d09000,0x84d8a000] [id=16180]
+
+=>0xb6611800 (exited) GCTaskThread [stack: 0x86d7f000,0x86e00000] [id=16172]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0xb6605220] Threads_lock - owner thread: 0x85210c00
+[0xb6605630] Heap_lock - owner thread: 0x09649000
+
+Heap:
+ PSYoungGen      total 147968K, used 26610K [0x9c580000, 0xa7000000, 0xa7000000)
+  eden space 121344K, 0% used [0x9c580000,0x9c580000,0xa3c00000)
+  from space 26624K, 99% used [0xa3c00000,0xa55fc938,0xa5600000)
+  to   space 26624K, 0% used [0xa5600000,0xa5600000,0xa7000000)
+ ParOldGen       total 101632K, used 45409K [0x87000000, 0x8d340000, 0x9c580000)
+  object space 101632K, 44% used [0x87000000,0x89c58648,0x8d340000)
+ Metaspace       used 26548K, capacity 27275K, committed 27308K, reserved 27952K
+
+Card table byte_map: [0xa70dd000,0xa71de000] byte_map_base: 0xa6ca5000
+
+Marking Bits: (ParMarkBitMap*) 0xb715a9a0
+ Begin Bits: [0x85c00000, 0x86400000)
+ End Bits:   [0x86400000, 0x86c00000)
+
+Polling page: 0xb7753000
+
+CodeCache: size=245760Kb used=13918Kb max_used=13947Kb free=231841Kb
+ bounds [0xa759e000, 0xa834e000, 0xb659e000]
+ total_blobs=5183 nmethods=4987 adapters=110
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 13,072 Thread 0x85236000 5643       2       org.jboss.scanning.annotations.plugins.GenericAnnotationVisitor::handleRelevantClass (118 bytes)
+Event: 13,073 Thread 0x85236000 nmethod 5643 0xa8331288 code [0xa83313e0, 0xa8331690]
+Event: 13,073 Thread 0x85236000 5644       2       org.jboss.reflect.plugins.ClassInfoImpl::getDeclaredFields (29 bytes)
+Event: 13,073 Thread 0x85236000 nmethod 5644 0xa8331a48 code [0xa8331b80, 0xa8331d58]
+Event: 13,073 Thread 0x85236000 5645       2       org.jboss.reflect.plugins.introspection.IntrospectionTypeInfoFactoryImpl$1::run (5 bytes)
+Event: 13,074 Thread 0x85236000 nmethod 5645 0xa8331ec8 code [0xa8331fe0, 0xa83320cc]
+Event: 13,074 Thread 0x85236000 5646       2       org.jboss.reflect.plugins.introspection.IntrospectionTypeInfoFactoryImpl::getDeclaredFields (29 bytes)
+Event: 13,074 Thread 0x85236000 nmethod 5646 0xa8332148 code [0xa83322a0, 0xa8332488]
+Event: 13,116 Thread 0x85234000 nmethod 5538 0xa8339b48 code [0xa833a2c0, 0xa833e8f8]
+Event: 13,117 Thread 0x85234000 5559   !   4       java.net.URL::<init> (543 bytes)
+
+GC Heap History (10 events):
+Event: 7,583 GC heap after
+Heap after GC invocations=8 (full 1):
+ PSYoungGen      total 142592K, used 8764K [0x9c580000, 0xa6e80000, 0xa7000000)
+  eden space 133632K, 0% used [0x9c580000,0x9c580000,0xa4800000)
+  from space 8960K, 97% used [0xa4800000,0xa508f070,0xa50c0000)
+  to   space 19712K, 0% used [0xa5b40000,0xa5b40000,0xa6e80000)
+ ParOldGen       total 101632K, used 36680K [0x87000000, 0x8d340000, 0x9c580000)
+  object space 101632K, 36% used [0x87000000,0x893d2060,0x8d340000)
+ Metaspace       used 19196K, capacity 19674K, committed 19712K, reserved 19760K
+}
+Event: 8,926 GC heap before
+{Heap before GC invocations=9 (full 1):
+ PSYoungGen      total 142592K, used 142396K [0x9c580000, 0xa6e80000, 0xa7000000)
+  eden space 133632K, 100% used [0x9c580000,0xa4800000,0xa4800000)
+  from space 8960K, 97% used [0xa4800000,0xa508f070,0xa50c0000)
+  to   space 19712K, 0% used [0xa5b40000,0xa5b40000,0xa6e80000)
+ ParOldGen       total 101632K, used 36680K [0x87000000, 0x8d340000, 0x9c580000)
+  object space 101632K, 36% used [0x87000000,0x893d2060,0x8d340000)
+ Metaspace       used 21428K, capacity 22023K, committed 22144K, reserved 22832K
+Event: 8,956 GC heap after
+Heap after GC invocations=9 (full 1):
+ PSYoungGen      total 153856K, used 12560K [0x9c580000, 0xa7000000, 0xa7000000)
+  eden space 134144K, 0% used [0x9c580000,0x9c580000,0xa4880000)
+  from space 19712K, 63% used [0xa5b40000,0xa6784160,0xa6e80000)
+  to   space 19200K, 0% used [0xa4880000,0xa4880000,0xa5b40000)
+ ParOldGen       total 101632K, used 36684K [0x87000000, 0x8d340000, 0x9c580000)
+  object space 101632K, 36% used [0x87000000,0x893d3060,0x8d340000)
+ Metaspace       used 21428K, capacity 22023K, committed 22144K, reserved 22832K
+}
+Event: 10,423 GC heap before
+{Heap before GC invocations=10 (full 1):
+ PSYoungGen      total 153856K, used 146704K [0x9c580000, 0xa7000000, 0xa7000000)
+  eden space 134144K, 100% used [0x9c580000,0xa4880000,0xa4880000)
+  from space 19712K, 63% used [0xa5b40000,0xa6784160,0xa6e80000)
+  to   space 19200K, 0% used [0xa4880000,0xa4880000,0xa5b40000)
+ ParOldGen       total 101632K, used 36684K [0x87000000, 0x8d340000, 0x9c580000)
+  object space 101632K, 36% used [0x87000000,0x893d3060,0x8d340000)
+ Metaspace       used 23020K, capacity 23640K, committed 23680K, reserved 23856K
+Event: 10,463 GC heap after
+Heap after GC invocations=10 (full 1):
+ PSYoungGen      total 153344K, used 19185K [0x9c580000, 0xa7000000, 0xa7000000)
+  eden space 134144K, 0% used [0x9c580000,0x9c580000,0xa4880000)
+  from space 19200K, 99% used [0xa4880000,0xa5b3c628,0xa5b40000)
+  to   space 21248K, 0% used [0xa5b40000,0xa5b40000,0xa7000000)
+ ParOldGen       total 101632K, used 37065K [0x87000000, 0x8d340000, 0x9c580000)
+  object space 101632K, 36% used [0x87000000,0x894326b0,0x8d340000)
+ Metaspace       used 23020K, capacity 23640K, committed 23680K, reserved 23856K
+}
+Event: 12,105 GC heap before
+{Heap before GC invocations=11 (full 1):
+ PSYoungGen      total 153344K, used 153329K [0x9c580000, 0xa7000000, 0xa7000000)
+  eden space 134144K, 100% used [0x9c580000,0xa4880000,0xa4880000)
+  from space 19200K, 99% used [0xa4880000,0xa5b3c628,0xa5b40000)
+  to   space 21248K, 0% used [0xa5b40000,0xa5b40000,0xa7000000)
+ ParOldGen       total 101632K, used 37065K [0x87000000, 0x8d340000, 0x9c580000)
+  object space 101632K, 36% used [0x87000000,0x894326b0,0x8d340000)
+ Metaspace       used 24836K, capacity 25555K, committed 25600K, reserved 25904K
+Event: 12,175 GC heap after
+Heap after GC invocations=11 (full 1):
+ PSYoungGen      total 142592K, used 21239K [0x9c580000, 0xa7000000, 0xa7000000)
+  eden space 121344K, 0% used [0x9c580000,0x9c580000,0xa3c00000)
+  from space 21248K, 99% used [0xa5b40000,0xa6ffdd60,0xa7000000)
+  to   space 26624K, 0% used [0xa3c00000,0xa3c00000,0xa5600000)
+ ParOldGen       total 101632K, used 43925K [0x87000000, 0x8d340000, 0x9c580000)
+  object space 101632K, 43% used [0x87000000,0x89ae5708,0x8d340000)
+ Metaspace       used 24836K, capacity 25555K, committed 25600K, reserved 25904K
+}
+Event: 13,164 GC heap before
+{Heap before GC invocations=12 (full 1):
+ PSYoungGen      total 142592K, used 105635K [0x9c580000, 0xa7000000, 0xa7000000)
+  eden space 121344K, 69% used [0x9c580000,0xa17eb1c0,0xa3c00000)
+  from space 21248K, 99% used [0xa5b40000,0xa6ffdd60,0xa7000000)
+  to   space 26624K, 0% used [0xa3c00000,0xa3c00000,0xa5600000)
+ ParOldGen       total 101632K, used 43925K [0x87000000, 0x8d340000, 0x9c580000)
+  object space 101632K, 43% used [0x87000000,0x89ae5708,0x8d340000)
+ Metaspace       used 26548K, capacity 27275K, committed 27308K, reserved 27952K
+Event: 13,220 GC heap after
+Heap after GC invocations=12 (full 1):
+ PSYoungGen      total 147968K, used 26610K [0x9c580000, 0xa7000000, 0xa7000000)
+  eden space 121344K, 0% used [0x9c580000,0x9c580000,0xa3c00000)
+  from space 26624K, 99% used [0xa3c00000,0xa55fc938,0xa5600000)
+  to   space 26624K, 0% used [0xa5600000,0xa5600000,0xa7000000)
+ ParOldGen       total 101632K, used 45409K [0x87000000, 0x8d340000, 0x9c580000)
+  object space 101632K, 44% used [0x87000000,0x89c58648,0x8d340000)
+ Metaspace       used 26548K, capacity 27275K, committed 27308K, reserved 27952K
+}
+Event: 13,220 GC heap before
+{Heap before GC invocations=13 (full 2):
+ PSYoungGen      total 147968K, used 26610K [0x9c580000, 0xa7000000, 0xa7000000)
+  eden space 121344K, 0% used [0x9c580000,0x9c580000,0xa3c00000)
+  from space 26624K, 99% used [0xa3c00000,0xa55fc938,0xa5600000)
+  to   space 26624K, 0% used [0xa5600000,0xa5600000,0xa7000000)
+ ParOldGen       total 101632K, used 45409K [0x87000000, 0x8d340000, 0x9c580000)
+  object space 101632K, 44% used [0x87000000,0x89c58648,0x8d340000)
+ Metaspace       used 26548K, capacity 27275K, committed 27308K, reserved 27952K
+
+Deoptimization events (10 events):
+Event: 9,736 Thread 0x09649000 Uncommon trap: reason=unreached action=reinterpret pc=0xa7906db0 method=org.jboss.vfs.spi.JavaZipFileSystem$ZipNode.find(Lorg/jboss/vfs/VirtualFile;Lorg/jboss/vfs/VirtualFile;)Lorg/jboss/vfs/spi/JavaZipFileSystem$ZipNode; @ 34
+Event: 9,926 Thread 0x09649000 Uncommon trap: reason=unreached action=reinterpret pc=0xa77c37cc method=java.util.HashMap.getNode(ILjava/lang/Object;)Ljava/util/HashMap$Node; @ 84
+Event: 9,926 Thread 0x09649000 Uncommon trap: reason=unreached action=reinterpret pc=0xa7716760 method=java.util.HashMap.getNode(ILjava/lang/Object;)Ljava/util/HashMap$Node; @ 84
+Event: 10,020 Thread 0x09649000 Uncommon trap: reason=unreached action=reinterpret pc=0xa77b3674 method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 109
+Event: 10,068 Thread 0x09649000 Uncommon trap: reason=unreached action=reinterpret pc=0xa779e83c method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 109
+Event: 10,408 Thread 0x09649000 Uncommon trap: reason=unloaded action=reinterpret pc=0xa76a8900 method=java.lang.CharacterData.of(I)Ljava/lang/CharacterData; @ 96
+Event: 10,867 Thread 0x09649000 Uncommon trap: reason=unreached action=reinterpret pc=0xa7b8e3a0 method=java.lang.StringBuffer.toString()Ljava/lang/String; @ 4
+Event: 11,138 Thread 0x09649000 Uncommon trap: reason=unreached action=reinterpret pc=0xa81ef620 method=org.apache.xerces.impl.XMLNSDocumentScannerImpl.scanAttribute(Lorg/apache/xerces/util/XMLAttributesImpl;)V @ 373
+Event: 12,569 Thread 0x09649000 Uncommon trap: reason=unreached action=reinterpret pc=0xa7af6830 method=org.jboss.vfs.spi.JavaZipFileSystem.isDirectory(Lorg/jboss/vfs/VirtualFile;Lorg/jboss/vfs/VirtualFile;)Z @ 11
+Event: 12,747 Thread 0x09649000 Uncommon trap: reason=unreached action=reinterpret pc=0xa7d5ff18 method=org.jboss.vfs.spi.JavaZipFileSystem.isDirectory(Lorg/jboss/vfs/VirtualFile;Lorg/jboss/vfs/VirtualFile;)Z @ 11
+
+Internal exceptions (10 events):
+Event: 12,812 Thread 0x09649000 Exception <a 'java/security/PrivilegedActionException'> (0x9f8c2828) thrown at [/HUDSON/workspace/8-2-build-linux-i586/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+Event: 12,834 Thread 0x09649000 Exception <a 'java/security/PrivilegedActionException'> (0x9faf1948) thrown at [/HUDSON/workspace/8-2-build-linux-i586/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+Event: 12,834 Thread 0x09649000 Exception <a 'java/security/PrivilegedActionException'> (0x9faf28c0) thrown at [/HUDSON/workspace/8-2-build-linux-i586/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+Event: 12,834 Thread 0x09649000 Exception <a 'java/security/PrivilegedActionException'> (0x9faf58a0) thrown at [/HUDSON/workspace/8-2-build-linux-i586/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+Event: 12,841 Thread 0x09649000 Exception <a 'java/security/PrivilegedActionException'> (0x9fb9d560) thrown at [/HUDSON/workspace/8-2-build-linux-i586/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+Event: 12,841 Thread 0x09649000 Exception <a 'java/security/PrivilegedActionException'> (0x9fb9e448) thrown at [/HUDSON/workspace/8-2-build-linux-i586/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+Event: 12,841 Thread 0x09649000 Exception <a 'java/security/PrivilegedActionException'> (0x9fba0c68) thrown at [/HUDSON/workspace/8-2-build-linux-i586/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+Event: 12,847 Thread 0x09649000 Exception <a 'java/security/PrivilegedActionException'> (0x9fc06218) thrown at [/HUDSON/workspace/8-2-build-linux-i586/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+Event: 12,847 Thread 0x09649000 Exception <a 'java/security/PrivilegedActionException'> (0x9fc071a8) thrown at [/HUDSON/workspace/8-2-build-linux-i586/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+Event: 12,847 Thread 0x09649000 Exception <a 'java/security/PrivilegedActionException'> (0x9fc0a288) thrown at [/HUDSON/workspace/8-2-build-linux-i586/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+
+Events (10 events):
+Event: 12,981 loading class java/sql/ResultSet done
+Event: 12,981 loading class java/sql/ResultSetMetaData
+Event: 12,981 loading class java/sql/ResultSetMetaData done
+Event: 13,001 Thread 0x09649000 DEOPT PACKING pc=0xa8317452 sp=0x84ca2e00
+Event: 13,001 Thread 0x09649000 DEOPT UNPACKING pc=0xa75da310 sp=0x84ca2c90 mode 0
+Event: 13,040 loading class java/util/concurrent/CancellationException
+Event: 13,040 loading class java/util/concurrent/CancellationException done
+Event: 13,085 Executing VM operation: Deoptimize
+Event: 13,086 Executing VM operation: Deoptimize done
+Event: 13,164 Executing VM operation: CollectForMetadataAllocation
+
+
+Dynamic libraries:
+08048000-08049000 r-xp 00000000 08:02 2234754    /opt/jdk1.8_java/bin/java
+08049000-0804a000 rw-p 00000000 08:02 2234754    /opt/jdk1.8_java/bin/java
+0932d000-0a385000 rw-p 00000000 00:00 0          [heap]
+80ebd000-8116b000 rw-p 00000000 00:00 0 
+8116b000-81200000 ---p 00000000 00:00 0 
+81200000-81296000 rw-p 00000000 00:00 0 
+81296000-81300000 ---p 00000000 00:00 0 
+8131b000-8141b000 rw-p 00000000 00:00 0 
+8141b000-814f3000 r-xp 00000000 08:03 923776     /usr/lib/i386-linux-gnu/libstdc++.so.6.0.16
+814f3000-814f4000 ---p 000d8000 08:03 923776     /usr/lib/i386-linux-gnu/libstdc++.so.6.0.16
+814f4000-814f8000 r--p 000d8000 08:03 923776     /usr/lib/i386-linux-gnu/libstdc++.so.6.0.16
+814f8000-814f9000 rw-p 000dc000 08:03 923776     /usr/lib/i386-linux-gnu/libstdc++.so.6.0.16
+814f9000-81600000 rw-p 00000000 00:00 0 
+81600000-816ff000 rw-p 00000000 00:00 0 
+816ff000-81700000 ---p 00000000 00:00 0 
+81700000-81800000 rw-p 00000000 00:00 0 
+81800000-818ff000 rw-p 00000000 00:00 0 
+818ff000-81900000 ---p 00000000 00:00 0 
+81900000-819f9000 rw-p 00000000 00:00 0 
+819f9000-81a00000 ---p 00000000 00:00 0 
+81a00000-81b00000 rw-p 00000000 00:00 0 
+81b00000-81c00000 rw-p 00000000 00:00 0 
+81c00000-81c84000 rw-p 00000000 00:00 0 
+81c84000-81d00000 ---p 00000000 00:00 0 
+81d00000-81e00000 rw-p 00000000 00:00 0 
+81e00000-81efc000 rw-p 00000000 00:00 0 
+81efc000-81f00000 ---p 00000000 00:00 0 
+81f4a000-8204a000 rw-p 00000000 00:00 0 
+820b4000-820cc000 r--s 001b1000 08:01 2887874    /home/java01/Desktop/jboss/server/default/deployers/jsf.deployer/Mojarra-2.0/jsf-libs/jsf-impl-2.0.3-b05.jar
+820cc000-820e8000 r-xp 00000000 08:03 787380     /lib/i386-linux-gnu/libgcc_s.so.1
+820e8000-820e9000 r--p 0001b000 08:03 787380     /lib/i386-linux-gnu/libgcc_s.so.1
+820e9000-820ea000 rw-p 0001c000 08:03 787380     /lib/i386-linux-gnu/libgcc_s.so.1
+820f5000-82100000 r--s 0008a000 08:01 2887873    /home/java01/Desktop/jboss/server/default/deployers/jsf.deployer/Mojarra-2.0/jsf-libs/jsf-api-2.0.3-b05.jar
+82100000-821fc000 rw-p 00000000 00:00 0 
+821fc000-82200000 ---p 00000000 00:00 0 
+82200000-822ff000 rw-p 00000000 00:00 0 
+822ff000-82300000 ---p 00000000 00:00 0 
+82300000-823ff000 rw-p 00000000 00:00 0 
+823ff000-82400000 ---p 00000000 00:00 0 
+82403000-82405000 rw-p 00000000 00:00 0 
+82405000-82407000 r--s 00004000 08:01 2887872    /home/java01/Desktop/jboss/server/default/deployers/jsf.deployer/Mojarra-2.0/jsf-libs/jboss-faces.jar
+82407000-82408000 r-xp 00000000 08:03 790438     /lib/i386-linux-gnu/libaio.so.1.0.1
+82408000-82409000 r--p 00000000 08:03 790438     /lib/i386-linux-gnu/libaio.so.1.0.1
+82409000-8240a000 rw-p 00001000 08:03 790438     /lib/i386-linux-gnu/libaio.so.1.0.1
+8240a000-82413000 r-xp 00000000 08:01 2886295    /home/java01/Desktop/jboss/bin/native/lib/libHornetQAIO32.so
+82413000-82414000 rw-p 00008000 08:01 2886295    /home/java01/Desktop/jboss/bin/native/lib/libHornetQAIO32.so
+82414000-82415000 r--s 00002000 08:01 1970171    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/quartz-ra.jar-8d760d36dbe4b8ec/quartz-ra.jar
+82415000-82416000 r--s 00002000 08:01 1970168    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/quartz-ra.rar-99b134e8ebc64e9b/quartz-ra.rar
+82416000-8241b000 r--s 0002a000 08:01 1970163    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/mod_cluster.jar-7c68e1235cbb84c/mod_cluster.jar
+8241b000-82424000 r--s 00058000 08:01 1970134    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/blog-war-1.0-SNAPSHOT.war-997df87dd015b1b7/WEB-INF/lib/standard-1.1.2.jar
+82424000-82426000 r--s 00004000 08:01 1970133    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/blog-war-1.0-SNAPSHOT.war-997df87dd015b1b7/WEB-INF/lib/jstl-1.1.2.jar
+82426000-82428000 r--s 00004000 08:01 1969844    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/blog-ejb-1.0-SNAPSHOT.jar-a194a6883867ae99/blog-ejb-1.0-SNAPSHOT.jar
+82428000-82429000 r--s 00061000 08:01 1968955    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/blog.ear-ae4666f22143aa42/blog.ear
+82429000-82431000 r--s 0005d000 08:01 2887961    /home/java01/Desktop/jboss/server/default/deploy/jbossweb.sar/jboss-web-service.jar
+82431000-8244e000 r--s 0020c000 08:01 2887957    /home/java01/Desktop/jboss/server/default/deploy/jbossweb.sar/jbossweb.jar
+8244e000-82457000 r--s 00062000 08:01 2887963    /home/java01/Desktop/jboss/server/default/deploy/jbossweb.sar/jstl.jar
+82457000-82464000 r--s 00167000 08:01 2887958    /home/java01/Desktop/jboss/server/default/deploy/jbossweb.sar/jasper-jdt.jar
+82464000-82465000 r--s 00003000 08:01 5898706    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jboss-xa-jdbc.jar-782ed4fc6c045ed6/jboss-xa-jdbc.jar
+82465000-82466000 r--s 00003000 08:01 5898701    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jboss-xa-jdbc.rar-85d92917235424fa/jboss-xa-jdbc.rar
+82466000-82467000 r--s 00001000 08:01 5898696    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jboss-ejb3-embedded-impl-as.jar-e6e1d35a8f4d6f45/jboss-ejb3-embedded-impl-as.jar
+82467000-82469000 r--s 00018000 08:01 5898600    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/hornetq-ra.jar-c943017a00a3bfc3/hornetq-ra.jar
+82469000-8246a000 r--s 00003000 08:01 5771992    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/mail-ra.jar-ccdb7fbcce1968b4/mail-ra.jar
+8246a000-8256a000 rw-p 00000000 00:00 0 
+8256a000-8256d000 ---p 00000000 00:00 0 
+8256d000-825bb000 rw-p 00000000 00:00 0 
+825bb000-825c0000 r-xp 00000000 08:03 923260     /usr/lib/i386-linux-gnu/libXdmcp.so.6.0.0
+825c0000-825c1000 r--p 00004000 08:03 923260     /usr/lib/i386-linux-gnu/libXdmcp.so.6.0.0
+825c1000-825c2000 rw-p 00005000 08:03 923260     /usr/lib/i386-linux-gnu/libXdmcp.so.6.0.0
+825c2000-825e1000 r-xp 00000000 08:03 923654     /usr/lib/i386-linux-gnu/libxcb.so.1.1.0
+825e1000-825e2000 r--p 0001f000 08:03 923654     /usr/lib/i386-linux-gnu/libxcb.so.1.1.0
+825e2000-825e3000 rw-p 00020000 08:03 923654     /usr/lib/i386-linux-gnu/libxcb.so.1.1.0
+825e3000-825f1000 r-xp 00000000 08:03 923268     /usr/lib/i386-linux-gnu/libXi.so.6.1.0
+825f1000-825f2000 r--p 0000d000 08:03 923268     /usr/lib/i386-linux-gnu/libXi.so.6.1.0
+825f2000-825f3000 rw-p 0000e000 08:03 923268     /usr/lib/i386-linux-gnu/libXi.so.6.1.0
+825f3000-82723000 r-xp 00000000 08:03 923771     /usr/lib/i386-linux-gnu/libX11.so.6.3.0
+82723000-82724000 r--p 0012f000 08:03 923771     /usr/lib/i386-linux-gnu/libX11.so.6.3.0
+82724000-82726000 rw-p 00130000 08:03 923771     /usr/lib/i386-linux-gnu/libX11.so.6.3.0
+82726000-82727000 rw-p 00000000 00:00 0 
+82727000-82737000 r-xp 00000000 08:03 923262     /usr/lib/i386-linux-gnu/libXext.so.6.4.0
+82737000-82738000 r--p 0000f000 08:03 923262     /usr/lib/i386-linux-gnu/libXext.so.6.4.0
+82738000-82739000 rw-p 00010000 08:03 923262     /usr/lib/i386-linux-gnu/libXext.so.6.4.0
+82739000-8273a000 r--s 00003000 08:01 5771989    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/mail-ra.rar-4f624ad251e9e3/mail-ra.rar
+8273a000-8273b000 r--s 00003000 08:01 5771986    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jboss-local-jdbc.jar-1c71f1b65b817049/jboss-local-jdbc.jar
+8273b000-8273c000 r--s 00004000 08:01 5771983    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jboss-local-jdbc.rar-829726c5b167d3e3/jboss-local-jdbc.rar
+8273c000-8274f000 r--s 00344000 08:02 2234913    /opt/jdk1.8_java/jre/lib/resources.jar
+8274f000-827d5000 r-xp 00000000 08:02 2235017    /opt/jdk1.8_java/jre/lib/i386/libawt.so
+827d5000-827dc000 rw-p 00086000 08:02 2235017    /opt/jdk1.8_java/jre/lib/i386/libawt.so
+827dc000-82800000 rw-p 00000000 00:00 0 
+82800000-828fd000 rw-p 00000000 00:00 0 
+828fd000-82900000 ---p 00000000 00:00 0 
+82900000-82a00000 rw-p 00000000 00:00 0 
+82a00000-82b00000 rw-p 00000000 00:00 0 
+82b00000-82c00000 rw-p 00000000 00:00 0 
+82c00000-82cfa000 rw-p 00000000 00:00 0 
+82cfa000-82d00000 ---p 00000000 00:00 0 
+82d00000-82dfe000 rw-p 00000000 00:00 0 
+82dfe000-82e00000 ---p 00000000 00:00 0 
+82e00000-82ef6000 rw-p 00000000 00:00 0 
+82ef6000-82f00000 ---p 00000000 00:00 0 
+82f00000-82f01000 r--s 00002000 08:01 5771980    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/shrinkwrap-extension-vdf.jar-6a1e4188a417afcf/shrinkwrap-extension-vdf.jar
+82f01000-82f04000 r--s 0001c000 08:01 5771977    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/xnio-nio.jar-64c6479a237870ad/xnio-nio.jar
+82f04000-82f06000 r-xp 00000000 08:03 923249     /usr/lib/i386-linux-gnu/libXau.so.6.0.0
+82f06000-82f07000 r--p 00001000 08:03 923249     /usr/lib/i386-linux-gnu/libXau.so.6.0.0
+82f07000-82f08000 rw-p 00002000 08:03 923249     /usr/lib/i386-linux-gnu/libXau.so.6.0.0
+82f08000-82f55000 r-xp 00000000 08:02 2235019    /opt/jdk1.8_java/jre/lib/i386/libawt_xawt.so
+82f55000-82f57000 rw-p 0004c000 08:02 2235019    /opt/jdk1.8_java/jre/lib/i386/libawt_xawt.so
+82f57000-82f58000 rw-p 00000000 00:00 0 
+82f58000-82f74000 r--s 00393000 08:02 2234995    /opt/jdk1.8_java/jre/lib/ext/cldrdata.jar
+82f74000-82f77000 ---p 00000000 00:00 0 
+82f77000-82fc5000 rw-p 00000000 00:00 0 
+82fc5000-82fc7000 r--s 00006000 08:01 5771879    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/resteasy-jettison-provider-2.2.1.GA.jar-7dab999dcadc3afa/resteasy-jettison-provider-2.2.1.GA.jar
+82fc7000-82fc9000 r--s 00003000 08:01 5771876    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/resteasy-cdi-2.2.1.GA.jar-9ebefccbf6315bb4/resteasy-cdi-2.2.1.GA.jar
+82fc9000-82fd5000 r--s 00083000 08:01 5771873    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/resteasy-jaxrs-2.2.1.GA.jar-2b7ccbd196c9b7b5/resteasy-jaxrs-2.2.1.GA.jar
+82fd5000-82fe7000 r--s 000c6000 08:01 5771870    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jaxb-impl-2.2.jar-edd4478b0ddb02a5/jaxb-impl-2.2.jar
+82fe7000-82fe9000 r--s 0000f000 08:01 5771867    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/resteasy-multipart-provider-2.2.1.GA.jar-ec6b7af4fa09acae/resteasy-multipart-provider-2.2.1.GA.jar
+82fe9000-82ff3000 r--s 0007b000 08:01 5771864    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jackson-mapper-asl-1.6.3.jar-50034b7db7b81ad8/jackson-mapper-asl-1.6.3.jar
+82ff3000-82ff5000 r--s 00003000 08:01 5771861    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jackson-jaxrs-1.6.3.jar-1f0c5c8f30eb51a3/jackson-jaxrs-1.6.3.jar
+82ff5000-82ffa000 r--s 00026000 08:01 5771858    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/httpcore-4.0.1.jar-b7721257994e6dea/httpcore-4.0.1.jar
+82ffa000-82ffb000 r--s 00004000 08:01 5771855    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/scannotation-1.0.3.jar-fa243fdd854087f6/scannotation-1.0.3.jar
+82ffb000-82ffe000 r--s 0000d000 08:01 5771852    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/resteasy-jaxb-provider-2.2.1.GA.jar-e1b74c423796dce1/resteasy-jaxb-provider-2.2.1.GA.jar
+82ffe000-83000000 r--s 0000a000 08:01 5771849    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jaxrs-api-2.2.1.GA.jar-f0cddb535b175a2c/jaxrs-api-2.2.1.GA.jar
+83000000-830fe000 rw-p 00000000 00:00 0 
+830fe000-83100000 ---p 00000000 00:00 0 
+83100000-83105000 r-xp 00000000 08:03 923286     /usr/lib/i386-linux-gnu/libXtst.so.6.1.0
+83105000-83106000 r--p 00004000 08:03 923286     /usr/lib/i386-linux-gnu/libXtst.so.6.1.0
+83106000-83107000 rw-p 00005000 08:03 923286     /usr/lib/i386-linux-gnu/libXtst.so.6.1.0
+83107000-8310f000 r-xp 00000000 08:03 923282     /usr/lib/i386-linux-gnu/libXrender.so.1.3.0
+8310f000-83110000 r--p 00007000 08:03 923282     /usr/lib/i386-linux-gnu/libXrender.so.1.3.0
+83110000-83111000 rw-p 00008000 08:03 923282     /usr/lib/i386-linux-gnu/libXrender.so.1.3.0
+83111000-83116000 r--s 002f8000 08:02 2234877    /opt/jdk1.8_java/jre/lib/charsets.jar
+83116000-83117000 r--s 00003000 08:01 2887869    /home/java01/Desktop/jboss/server/default/deployers/jsf.deployer/jboss-jsf-deployer-impl.jar
+83117000-83118000 r--s 00003000 08:01 5771972    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jboss-ejb3-metrics-deployer.jar-5c23b27a17fad6db/jboss-ejb3-metrics-deployer.jar
+83118000-8311a000 r--s 00001000 08:01 5771969    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/beanvalidation-deployers-1.0.0-Beta-1.jar-2a24f17d8497a291/beanvalidation-deployers-1.0.0-Beta-1.jar
+8311a000-83120000 r--s 0003a000 08:01 5771966    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/snakeyaml-1.8.jar-cd7a0fd8bbaf9d6/snakeyaml-1.8.jar
+83120000-83121000 r--s 00004000 08:01 5771963    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jboss-as-resteasy-6.1.0.Final.jar-af945c587cb1ff3d/jboss-as-resteasy-6.1.0.Final.jar
+83121000-83126000 r--s 0004d000 08:01 5771960    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/sjsxp-1.0.1.jar-a52652fb96db2d0f/sjsxp-1.0.1.jar
+83126000-83127000 r--s 00001000 08:01 5771951    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/resteasy-yaml-provider-2.2.1.GA.jar-991f99b6a5a73a9f/resteasy-yaml-provider-2.2.1.GA.jar
+83127000-8312b000 r--s 0002e000 08:01 5771948    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jackson-core-asl-1.6.3.jar-994c3f45041ea3ed/jackson-core-asl-1.6.3.jar
+8312b000-83132000 r--s 00065000 08:01 5771926    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/mail-1.4.2.jar-f54a701668e22f7e/mail-1.4.2.jar
+83132000-83133000 r--s 00000000 08:01 5771891    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jcip-annotations-1.0.jar-4fc1355ef12f0e7a/jcip-annotations-1.0.jar
+83133000-83135000 r--s 00000000 08:01 5771888    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/resteasy-jackson-provider-2.2.1.GA.jar-156e9b62be5d7306/resteasy-jackson-provider-2.2.1.GA.jar
+83135000-83137000 r--s 0000c000 08:01 5771885    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/commons-logging-1.1.0.jboss.jar-c5914b029fdab8e3/commons-logging-1.1.0.jboss.jar
+83137000-83139000 r--s 0000a000 08:01 5771882    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/commons-codec-1.3.jar-bc48e28292067c46/commons-codec-1.3.jar
+83139000-83142000 r--s 00096000 08:01 5771846    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/javassist-3.12.1.GA.jar-526455750e5e7a3/javassist-3.12.1.GA.jar
+83142000-83143000 r--s 00006000 08:01 5771843    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/resteasy-atom-provider-2.2.1.GA.jar-b4596a1416710b70/resteasy-atom-provider-2.2.1.GA.jar
+83143000-8314a000 r--s 00042000 08:01 5771840    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/httpclient-4.0.3.jar-3ed7ab24aa18c47e/httpclient-4.0.3.jar
+8314a000-8314b000 r--s 00001000 08:01 5771837    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/async-http-servlet-3.0-2.2.1.GA.jar-3fbc197b0814b710/async-http-servlet-3.0-2.2.1.GA.jar
+8314b000-8314d000 r--s 00010000 08:01 5771834    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jettison-1.2.jar-bbe52230f74507a0/jettison-1.2.jar
+8314d000-83154000 r--s 0004f000 08:01 5771831    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/apache-mime4j-0.6.jar-cba5469421db7ffc/apache-mime4j-0.6.jar
+83154000-83155000 r--s 00007000 08:01 5771828    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jackson-xc-1.6.3.jar-578dab717668da9e/jackson-xc-1.6.3.jar
+83155000-83156000 r--s 00000000 08:01 5771825    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jbossws-native-factories.jar-d58f8b9fbd14504c/jbossws-native-factories.jar
+83156000-83158000 r--s 00000000 08:01 5771822    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jbossws-native-services.jar-7f38d9d138d9c3f0/jbossws-native-services.jar
+83158000-83167000 r--s 000ad000 08:01 2887815    /home/java01/Desktop/jboss/server/default/deployers/weld.deployer/weld-core-no-jsf.jar
+83167000-8317a000 r--s 000d5000 08:01 2887820    /home/java01/Desktop/jboss/server/default/deployers/weld.deployer/guava.jar
+8317a000-8317c000 r--s 00009000 08:01 2887819    /home/java01/Desktop/jboss/server/default/deployers/weld.deployer/slf4j-ext.jar
+8317c000-8317e000 r--s 00002000 08:01 2887813    /home/java01/Desktop/jboss/server/default/deployers/weld.deployer/weld-int-deployer-mc-int.jar
+8317e000-83181000 r--s 0000b000 08:01 2887814    /home/java01/Desktop/jboss/server/default/deployers/weld.deployer/weld-spi.jar
+83181000-83186000 r--s 00021000 08:01 2887818    /home/java01/Desktop/jboss/server/default/deployers/weld.deployer/weld-int-deployer.jar
+83186000-83188000 r--s 00009000 08:01 2887816    /home/java01/Desktop/jboss/server/default/deployers/weld.deployer/weld-int-ejb.jar
+83188000-8318a000 r--s 00006000 08:01 2887817    /home/java01/Desktop/jboss/server/default/deployers/weld.deployer/cal10n-api.jar
+8318a000-8318b000 r--s 00002000 08:01 5771803    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jboss-ejb3-endpoint-deployer.jar-1450629778a13303/jboss-ejb3-endpoint-deployer.jar
+8318b000-8318d000 r--s 0000a000 08:01 5771800    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jboss-threads-metadata.jar-ce30b1af9256d564/jboss-threads-metadata.jar
+8318d000-8318e000 r--s 00001000 08:01 5771797    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jboss-ejb3-timerservice-deployer.jar-dd8c2e90e28d830a/jboss-ejb3-timerservice-deployer.jar
+8318e000-83191000 r--s 00017000 08:01 5771792    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jbossws-cxf-server.jar-c91a645180b5a67d/jbossws-cxf-server.jar
+83191000-83193000 r--s 00002000 08:01 5771790    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jbossws-cxf-transports-httpserver.jar-413b9a73fa315a73/jbossws-cxf-transports-httpserver.jar
+83193000-83194000 r--s 00000000 08:01 5771788    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jbossws-cxf-factories.jar-7b0369530a536103/jbossws-cxf-factories.jar
+83194000-83197000 r--s 0000e000 08:01 5771785    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jbossws-cxf-client.jar-6608a8d1b54567cb/jbossws-cxf-client.jar
+83197000-83198000 r--s 00003000 08:01 2887749    /home/java01/Desktop/jboss/server/default/deployers/jbossweb.deployer/jboss-web-deployer.jar
+83198000-83199000 r--s 00009000 08:01 5771780    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/xnio-metadata.jar-3f887707d64c11e4/xnio-metadata.jar
+83199000-8319a000 r--s 00000000 08:01 5771777    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/pluggable-instrumentor.jar-377427755534a450/pluggable-instrumentor.jar
+8319a000-8319e000 r--s 00016000 08:01 5771774    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jboss-aop-aspects.jar-6ca58b1f27e84a2/jboss-aop-aspects.jar
+8319e000-831a2000 r--s 0001b000 08:01 5771771    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jboss-as-aspects-jboss-aspect-library.jar-1f1d1190a35ffddd/jboss-as-aspects-jboss-aspect-library.jar
+831a2000-831a3000 r--s 00003000 08:01 5771768    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/bsh-deployer.jar-15ec335aad31b672/bsh-deployer.jar
+831a3000-831a6000 r--s 00016000 08:01 5771765    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jboss-as-ejb3-deployer.jar-c72508f714f02dfc/jboss-as-ejb3-deployer.jar
+831a6000-831a8000 r--s 00001000 08:01 5771762    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jboss-jpa-mcint.jar-161a7b5ac3931737/jboss-jpa-mcint.jar
+831a8000-831aa000 r--s 00007000 08:01 5771759    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jboss-ejb3-jndi-deployers.jar-f4021736fef14a41/jboss-ejb3-jndi-deployers.jar
+831aa000-831ac000 r--s 0000b000 08:01 5771756    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/logging-service-metadata.jar-fdd74fdf2b344b15/logging-service-metadata.jar
+831ac000-831ad000 r--s 00005000 08:01 5771753    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jboss-remoting-metadata.jar-f787ab78cce6a043/jboss-remoting-metadata.jar
+831ad000-831ae000 r--s 00001000 08:01 2887835    /home/java01/Desktop/jboss/server/default/deployers/seam.deployer/jboss-seam-int-microcontainer-6.0.0.GA.jar
+831ae000-831b1000 r--s 00017000 08:01 5771748    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jboss-jca-deployer.jar-57c697be159cf646/jboss-jca-deployer.jar
+831b1000-832b1000 rw-p 00000000 00:00 0 
+832b1000-832b4000 r--s 0000e000 08:01 2886405    /home/java01/Desktop/jboss/common/lib/hibernate-validator-legacy.jar
+832b4000-832b6000 r--s 00007000 08:01 2886532    /home/java01/Desktop/jboss/common/lib/dtdparser.jar
+832b6000-832bb000 r--s 0004b000 08:01 2886365    /home/java01/Desktop/jboss/common/lib/cxf-rt-ws-security.jar
+832bb000-832c0000 r--s 00036000 08:01 2886448    /home/java01/Desktop/jboss/common/lib/cxf-rt-databinding-aegis.jar
+832c0000-832c2000 r--s 00001000 08:01 2886415    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-jpa-int.jar
+832c2000-832c5000 r--s 00012000 08:01 2886538    /home/java01/Desktop/jboss/common/lib/cxf-rt-ws-addr.jar
+832c5000-832f7000 r--s 002cf000 08:01 2886367    /home/java01/Desktop/jboss/common/lib/hibernate-core.jar
+832f7000-832fe000 r--s 00067000 08:01 2886375    /home/java01/Desktop/jboss/common/lib/quartz.jar
+832fe000-83300000 r--s 00005000 08:01 2886465    /home/java01/Desktop/jboss/common/lib/jboss-as-hibernate-int.jar
+83300000-83301000 r--s 00001000 08:01 2886484    /home/java01/Desktop/jboss/common/lib/mail-plugin.jar
+83301000-83303000 r--s 00005000 08:01 2886534    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-nointerface-impl.jar
+83303000-83304000 r--s 00000000 08:01 2886421    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-effigy-aop-int.jar
+83304000-83305000 r--s 00001000 08:01 2886426    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-sis.jar
+83305000-83307000 r--s 00008000 08:01 2886468    /home/java01/Desktop/jboss/common/lib/jbossjts-integration.jar
+83307000-83309000 r--s 00000000 08:01 2886321    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-vfs-impl-vfs3.jar
+83309000-8330b000 r--s 00007000 08:01 2886485    /home/java01/Desktop/jboss/common/lib/neethi.jar
+8330b000-83324000 r--s 0010a000 08:01 2886399    /home/java01/Desktop/jboss/common/lib/jboss-remoting.jar
+83324000-8332a000 r--s 0004e000 08:01 2886318    /home/java01/Desktop/jboss/common/lib/cxf-rt-frontend-jaxws.jar
+8332a000-8332c000 r--s 00001000 08:01 2886556    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-effigy-int2.jar
+8332c000-8332e000 r--s 00000000 08:01 2886361    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-instantiator-impl.jar
+8332e000-8332f000 r--s 00007000 08:01 2886525    /home/java01/Desktop/jboss/common/lib/jboss-transaction-aspects.jar
+8332f000-83331000 r--s 00007000 08:01 2886528    /home/java01/Desktop/jboss/common/lib/jmx-adaptor-plugin.jar
+83331000-83334000 r--s 00010000 08:01 2886496    /home/java01/Desktop/jboss/common/lib/jboss-ha-server-api.jar
+83334000-83335000 r--s 0000a000 08:01 2886372    /home/java01/Desktop/jboss/common/lib/scheduler-plugin.jar
+83335000-83336000 r--s 00001000 08:01 2886378    /home/java01/Desktop/jboss/common/lib/jboss-current-invocation-aspects.jar
+83336000-8333a000 r--s 0003f000 08:01 2886392    /home/java01/Desktop/jboss/common/lib/jboss-metadata-war.jar
+8333a000-8333b000 r--s 00001000 08:01 2886516    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-timeout-spi.jar
+8333b000-8333d000 r--s 00004000 08:01 2886469    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-async-impl.jar
+8333d000-8333e000 r--s 00000000 08:01 2886473    /home/java01/Desktop/jboss/common/lib/jboss-bindingservice.jar
+8333e000-83340000 r--s 00005000 08:01 2886419    /home/java01/Desktop/jboss/common/lib/jboss-jacc-api_1.4_spec.jar
+83340000-83347000 r--s 00065000 08:01 2886360    /home/java01/Desktop/jboss/common/lib/mail.jar
+83347000-8334a000 r--s 00004000 08:01 2886355    /home/java01/Desktop/jboss/common/lib/jboss-switchboard-javaee.jar
+8334a000-8334c000 r--s 00002000 08:01 2886386    /home/java01/Desktop/jboss/common/lib/cxf-xjc-ts.jar
+8334c000-83350000 r--s 0001b000 08:01 2886561    /home/java01/Desktop/jboss/common/lib/jbossws-jboss60.jar
+83350000-83354000 r--s 00028000 08:01 2886339    /home/java01/Desktop/jboss/common/lib/jbossws-common.jar
+83354000-83359000 r--s 00043000 08:01 2886526    /home/java01/Desktop/jboss/common/lib/FastInfoset.jar
+83359000-8335c000 r--s 00009000 08:01 2886379    /home/java01/Desktop/jboss/common/lib/jboss-jaxws-api_2.2_spec.jar
+8335c000-83360000 r--s 00020000 08:01 2886332    /home/java01/Desktop/jboss/common/lib/XmlSchema.jar
+83360000-8336a000 r--s 00075000 08:01 2886363    /home/java01/Desktop/jboss/common/lib/bcel.jar
+8336a000-83370000 r--s 0001f000 08:01 2886535    /home/java01/Desktop/jboss/common/lib/jbossws-spi.jar
+83370000-83371000 r--s 00001000 08:01 2886346    /home/java01/Desktop/jboss/common/lib/shrinkwrap-extension-vfs3.jar
+83371000-83374000 r--s 00004000 08:01 2886523    /home/java01/Desktop/jboss/common/lib/jboss-jaspi-api_1.0_spec.jar
+83374000-83375000 r--s 00003000 08:01 2886492    /home/java01/Desktop/jboss/common/lib/jboss-injection-injector.jar
+83375000-83376000 r--s 00001000 08:01 2886447    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-concurrency-aop.jar
+83376000-83378000 r--s 00001000 08:01 2886543    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-mc-int.jar
+83378000-8337b000 r--s 00011000 08:01 2886406    /home/java01/Desktop/jboss/common/lib/jboss-profileservice-plugins.jar
+8337b000-83383000 r--s 000a4000 08:01 2886418    /home/java01/Desktop/jboss/common/lib/hsqldb.jar
+83383000-83385000 r--s 00000000 08:01 2886476    /home/java01/Desktop/jboss/common/lib/jboss-jpa-spi.jar
+83385000-83387000 r--s 00009000 08:01 2886443    /home/java01/Desktop/jboss/common/lib/jboss-jpa-deployers.jar
+83387000-8338e000 r--s 00040000 08:01 2886482    /home/java01/Desktop/jboss/common/lib/hibernate-validator.jar
+8338e000-83390000 r--s 00002000 08:01 2886499    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-singleton-impl.jar
+83390000-83393000 r--s 00009000 08:01 2886474    /home/java01/Desktop/jboss/common/lib/jboss-ejb-api_3.1_spec.jar
+83393000-83394000 r--s 00001000 08:01 2886424    /home/java01/Desktop/jboss/common/lib/managed-beans-impl.jar
+83394000-83396000 r--s 00004000 08:01 2886322    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-embedded-impl-base.jar
+83396000-83398000 r--s 00005000 08:01 2886453    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-singleton-deployer.jar
+83398000-8339a000 r--s 00004000 08:01 2886451    /home/java01/Desktop/jboss/common/lib/jboss-ha-server-cache-spi.jar
+8339a000-833a0000 r--s 00033000 08:01 2886507    /home/java01/Desktop/jboss/common/lib/jbossha.jar
+833a0000-833a1000 r--s 00008000 08:01 2886385    /home/java01/Desktop/jboss/common/lib/asm.jar
+833a1000-833ab000 r--s 00069000 08:01 2886512    /home/java01/Desktop/jboss/common/lib/jbossxacml.jar
+833ab000-833b2000 r--s 00053000 08:01 2886316    /home/java01/Desktop/jboss/common/lib/jboss-metadata-common.jar
+833b2000-833b3000 r--s 00002000 08:01 2886537    /home/java01/Desktop/jboss/common/lib/hsqldb-plugin.jar
+833b3000-833b5000 r--s 00007000 08:01 2886407    /home/java01/Desktop/jboss/common/lib/jboss-switchboard-mc-impl.jar
+833b5000-833b7000 r--s 00016000 08:01 2886337    /home/java01/Desktop/jboss/common/lib/cxf-rt-databinding-jaxb.jar
+833b7000-833b9000 r--s 00007000 08:01 2886483    /home/java01/Desktop/jboss/common/lib/jboss-connector-api_1.5_spec.jar
+833b9000-833bb000 r--s 00001000 08:01 2886494    /home/java01/Desktop/jboss/common/lib/properties-plugin.jar
+833bb000-833bc000 r--s 00000000 08:01 2886314    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-embedded-api-shrinkwrap.jar
+833bc000-833be000 r--s 00003000 08:01 2886362    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-ext-api.jar
+833be000-833dc000 r--s 001b3000 08:01 2886560    /home/java01/Desktop/jboss/common/lib/jbossws-native-core.jar
+833dc000-833dd000 r--s 00001000 08:01 2886388    /home/java01/Desktop/jboss/common/lib/jboss-resolver-spi.jar
+833dd000-833e0000 r--s 00019000 08:01 2886463    /home/java01/Desktop/jboss/common/lib/jboss-threads.jar
+833e0000-833e1000 r--s 00001000 08:01 2886371    /home/java01/Desktop/jboss/common/lib/jboss-jpa-vfs3.jar
+833e1000-833e3000 r--s 00017000 08:01 2886381    /home/java01/Desktop/jboss/common/lib/jboss-ha-server-core.jar
+833e3000-833e5000 r--s 00000000 08:01 2886408    /home/java01/Desktop/jboss/common/lib/proxy-javassist.jar
+833e5000-833e9000 r--s 00024000 08:01 2886498    /home/java01/Desktop/jboss/common/lib/cxf-tools-common.jar
+833e9000-83403000 r--s 0013a000 08:01 2886551    /home/java01/Desktop/jboss/common/lib/jbossjts.jar
+83403000-83406000 r--s 00012000 08:01 2886497    /home/java01/Desktop/jboss/common/lib/jboss-as-hornetq-int.jar
+83406000-8340c000 r--s 00032000 08:01 2886432    /home/java01/Desktop/jboss/common/lib/jboss-marshalling.jar
+8340c000-8340d000 r--s 00003000 08:01 2886319    /home/java01/Desktop/jboss/common/lib/cxf-xjc-dv.jar
+8340d000-8340f000 r--s 00000000 08:01 2886396    /home/java01/Desktop/jboss/common/lib/ejbref-resolver-spi.jar
+8340f000-83411000 r--s 00009000 08:01 2886343    /home/java01/Desktop/jboss/common/lib/cxf-tools-wsdlto-databinding-jaxb.jar
+83411000-83413000 r--s 0000a000 08:01 2886409    /home/java01/Desktop/jboss/common/lib/jboss-security-aspects.jar
+83413000-83414000 r--s 00004000 08:01 2886458    /home/java01/Desktop/jboss/common/lib/hornetq-jboss-as-integration.jar
+83414000-83416000 r--s 00005000 08:01 2886455    /home/java01/Desktop/jboss/common/lib/jboss-mc-int-servlet.jar
+83416000-83418000 r--s 00010000 08:01 2886383    /home/java01/Desktop/jboss/common/lib/jboss-jsr88.jar
+83418000-8341d000 r--s 00035000 08:01 2886393    /home/java01/Desktop/jboss/common/lib/commons-beanutils.jar
+8341d000-8342a000 r--s 0007c000 08:01 2886554    /home/java01/Desktop/jboss/common/lib/commons-collections.jar
+8342a000-8342b000 r--s 00000000 08:01 2886398    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-tx2-spi.jar
+8342b000-8342c000 r--s 00002000 08:01 2886374    /home/java01/Desktop/jboss/common/lib/cxf-xjc-boolean.jar
+8342c000-8342e000 r--s 00012000 08:01 2886464    /home/java01/Desktop/jboss/common/lib/jnpserver.jar
+8342e000-83430000 r--s 00003000 08:01 2886439    /home/java01/Desktop/jboss/common/lib/jboss-logmanager-log4j.jar
+83430000-83435000 r--s 0002f000 08:01 2886340    /home/java01/Desktop/jboss/common/lib/cxf-rt-transports-http.jar
+83435000-83436000 r--s 00005000 08:01 2886400    /home/java01/Desktop/jboss/common/lib/slf4j-api.jar
+83436000-83441000 r--s 00064000 08:01 2886333    /home/java01/Desktop/jboss/common/lib/xmlsec.jar
+83441000-83443000 r--s 0000a000 08:01 2886508    /home/java01/Desktop/jboss/common/lib/jboss-metadata-client.jar
+83443000-83445000 r--s 00005000 08:01 2886461    /home/java01/Desktop/jboss/common/lib/jboss-embedded-core.jar
+83445000-83446000 r--s 00003000 08:01 2886466    /home/java01/Desktop/jboss/common/lib/jboss-remoting-aspects.jar
+83446000-83448000 r--s 0000c000 08:01 2886317    /home/java01/Desktop/jboss/common/lib/jboss-monitoring.jar
+83448000-83449000 r--s 00001000 08:01 2886517    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-vfs-spi.jar
+83449000-8344a000 r--s 00000000 08:01 2886329    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-singleton-spi.jar
+8344a000-8344d000 r--s 00009000 08:01 2886335    /home/java01/Desktop/jboss/common/lib/validation-api.jar
+8344d000-83451000 r--s 00025000 08:01 2886436    /home/java01/Desktop/jboss/common/lib/cxf-rt-bindings-soap.jar
+83451000-83455000 r--s 00021000 08:01 2886477    /home/java01/Desktop/jboss/common/lib/wsdl4j.jar
+83455000-83456000 r--s 00001000 08:01 2886420    /home/java01/Desktop/jboss/common/lib/hornetq-bootstrap.jar
+83456000-83458000 r--s 00000000 08:01 2886434    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-context-naming.jar
+83458000-8345a000 r--s 00008000 08:01 2886341    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-cache.jar
+8345a000-8345c000 r--s 00007000 08:01 2886547    /home/java01/Desktop/jboss/common/lib/jboss-switchboard-jbmeta-javaee.jar
+8345c000-83460000 r--s 0001d000 08:01 2886562    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-interceptors.jar
+83460000-83462000 r--s 00009000 08:01 2886504    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-ext-api-impl.jar
+83462000-83463000 r--s 00000000 08:01 2886479    /home/java01/Desktop/jboss/common/lib/jboss-reloaded-naming-spi.jar
+83463000-83465000 r--s 00001000 08:01 2886557    /home/java01/Desktop/jboss/common/lib/jboss-injection-mc-impl.jar
+83465000-83466000 r--s 00003000 08:01 2886330    /home/java01/Desktop/jboss/common/lib/managed-beans-metadata-jbmeta.jar
+83466000-83469000 r--s 0000f000 08:01 2886356    /home/java01/Desktop/jboss/common/lib/hibernate-commons-annotations.jar
+83469000-8346b000 r--s 0000b000 08:01 2886351    /home/java01/Desktop/jboss/common/lib/cxf-tools-wsdlto-core.jar
+8346b000-8346d000 r--s 00000000 08:01 2886416    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-timerservice-spi.jar
+8346d000-83472000 r--s 0004b000 08:01 2886403    /home/java01/Desktop/jboss/common/lib/wss4j.jar
+83472000-83474000 r--s 00004000 08:01 2886413    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-deployers.jar
+83474000-83475000 r--s 00000000 08:01 2886387    /home/java01/Desktop/jboss/common/lib/scheduler-plugin-example.jar
+83475000-83477000 r--s 00000000 08:01 2886440    /home/java01/Desktop/jboss/common/lib/ejbref-resolver-ejb31-impl.jar
+83477000-8347a000 r--s 00018000 08:01 2886519    /home/java01/Desktop/jboss/common/lib/jboss-metadata-rar.jar
+8347a000-8347b000 r--s 00002000 08:01 2886402    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-tx2-impl.jar
+8347b000-8347c000 r--s 00000000 08:01 2886369    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-timerservice-extension.jar
+8347c000-8347f000 r--s 00023000 08:01 2886480    /home/java01/Desktop/jboss/common/lib/cxf-tools-wsdlto-frontend-jaxws.jar
+8347f000-83483000 r--s 00026000 08:01 2886544    /home/java01/Desktop/jboss/common/lib/jboss-management.jar
+83483000-83484000 r--s 00000000 08:01 2886357    /home/java01/Desktop/jboss/common/lib/proxy-spi.jar
+83484000-83488000 r--s 0001b000 08:01 2886364    /home/java01/Desktop/jboss/common/lib/jboss-as-profileservice.jar
+83488000-83489000 r--s 00003000 08:01 2886522    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-metadata.jar
+83489000-8348d000 r--s 0001e000 08:01 2886487    /home/java01/Desktop/jboss/common/lib/cxf-rt-transports-jms.jar
+8348d000-83490000 r--s 00016000 08:01 2886472    /home/java01/Desktop/jboss/common/lib/jboss-negotiation.jar
+83490000-83492000 r--s 00004000 08:01 2886515    /home/java01/Desktop/jboss/common/lib/weld-api.jar
+83492000-83496000 r--s 00040000 08:01 2886353    /home/java01/Desktop/jboss/common/lib/serializer.jar
+83496000-83497000 r--s 00001000 08:01 2886422    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-concurrency-impl.jar
+83497000-83498000 r--s 00001000 08:01 2886444    /home/java01/Desktop/jboss/common/lib/jboss-interceptor-spi.jar
+83498000-8349a000 r--s 00001000 08:01 2886431    /home/java01/Desktop/jboss/common/lib/jsr181-api.jar
+8349a000-8349b000 r--s 00003000 08:01 2886410    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-jndi-binder.jar
+8349b000-8349e000 r--s 0000f000 08:01 2886478    /home/java01/Desktop/jboss/common/lib/jboss-servlet-api_3.0_spec.jar
+8349e000-834a1000 r--s 0000b000 08:01 2886470    /home/java01/Desktop/jboss/common/lib/cdi-api.jar
+834a1000-834a2000 r--s 00001000 08:01 2886548    /home/java01/Desktop/jboss/common/lib/autonumber-plugin.jar
+834a2000-834a3000 r--s 00002000 08:01 2886536    /home/java01/Desktop/jboss/common/lib/ejbref-resolver-ejb30-impl.jar
+834a3000-834a5000 r--s 00004000 08:01 2886414    /home/java01/Desktop/jboss/common/lib/jboss-ha-client.jar
+834a5000-834c1000 r--s 00269000 08:01 2886564    /home/java01/Desktop/jboss/common/lib/xalan.jar
+834c1000-834c2000 r--s 00005000 08:01 2886433    /home/java01/Desktop/jboss/common/lib/cxf-rt-bindings-object.jar
+834c2000-834c8000 r--s 00042000 08:01 2886417    /home/java01/Desktop/jboss/common/lib/jboss-jca.jar
+834c8000-834ca000 r--s 00003000 08:01 2886411    /home/java01/Desktop/jboss/common/lib/jcl-over-slf4j.jar
+834ca000-834cf000 r--s 00052000 08:01 2886566    /home/java01/Desktop/jboss/common/lib/antlr.jar
+834cf000-834d0000 r--s 00002000 08:01 2886501    /home/java01/Desktop/jboss/common/lib/jaxws-httpserver-httpspi.jar
+834d0000-834d6000 r--s 00032000 08:01 2886326    /home/java01/Desktop/jboss/common/lib/jaxen.jar
+834d6000-834d8000 r--s 00001000 08:01 2886452    /home/java01/Desktop/jboss/common/lib/jboss-resolver-impl.jar
+834d8000-834da000 r--s 00002000 08:01 2886395    /home/java01/Desktop/jboss/common/lib/jboss-reloaded-naming-impl.jar
+834da000-834e9000 r--s 000b3000 08:01 2886511    /home/java01/Desktop/jboss/common/lib/netty.jar
+834e9000-834ea000 r--s 00001000 08:01 2886506    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-context-spi.jar
+834ea000-834eb000 r--s 00001000 08:01 2886490    /home/java01/Desktop/jboss/common/lib/hornetq-logging.jar
+834eb000-834ed000 r--s 00001000 08:01 2886481    /home/java01/Desktop/jboss/common/lib/jboss-annotations-api_1.1_spec.jar
+834ed000-834f0000 r--s 0000e000 08:01 2886429    /home/java01/Desktop/jboss/common/lib/cxf-rt-management.jar
+834f0000-834f9000 r--s 00048000 08:01 2886336    /home/java01/Desktop/jboss/common/lib/cxf-api.jar
+834f9000-834fb000 r--s 00007000 08:01 2886454    /home/java01/Desktop/jboss/common/lib/jboss-el-api_2.2_spec.jar
+834fb000-834fd000 r--s 00001000 08:01 2886489    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-timeout-3.1.jar
+834fd000-83500000 r--s 00013000 08:01 2886513    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-proxy-impl.jar
+83500000-835fd000 rw-p 00000000 00:00 0 
+835fd000-83600000 ---p 00000000 00:00 0 
+83600000-83602000 r--s 00006000 08:01 2886539    /home/java01/Desktop/jboss/common/lib/jboss-jaxb-intros.jar
+83602000-83603000 r--s 00001000 08:01 2886441    /home/java01/Desktop/jboss/common/lib/jboss-injection-manager.jar
+83603000-83604000 r--s 00000000 08:01 2886559    /home/java01/Desktop/jboss/common/lib/jboss-switchboard-mc-spi.jar
+83604000-83607000 r--s 0000b000 08:01 2886325    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-common.jar
+83607000-83609000 r--s 00012000 08:01 2886541    /home/java01/Desktop/jboss/common/lib/cxf-rt-frontend-simple.jar
+83609000-8360a000 r--s 00002000 08:01 2886401    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-heks.jar
+8360a000-8360b000 r--s 00000000 08:01 2886423    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-embedded-api.jar
+8360b000-8360c000 r--s 00005000 08:01 2886350    /home/java01/Desktop/jboss/common/lib/cxf-rt-transports-local.jar
+8360c000-8360e000 r--s 00008000 08:01 2886471    /home/java01/Desktop/jboss/common/lib/cxf-rt-bindings-xml.jar
+8360e000-83625000 r--s 0013d000 08:01 2886394    /home/java01/Desktop/jboss/common/lib/hornetq-core.jar
+83625000-83628000 r--s 00007000 08:01 2886486    /home/java01/Desktop/jboss/common/lib/picketbox-bare.jar
+83628000-8362b000 r--s 00005000 08:01 2886563    /home/java01/Desktop/jboss/common/lib/jboss-jms-api_1.1_spec.jar
+8362b000-8362e000 r--s 00015000 08:01 2886546    /home/java01/Desktop/jboss/common/lib/jbossws-framework.jar
+8362e000-83637000 r--s 0006d000 08:01 2886428    /home/java01/Desktop/jboss/common/lib/log4j.jar
+83637000-8363d000 r--s 0004b000 08:01 2886550    /home/java01/Desktop/jboss/common/lib/jboss-iiop.jar
+8363d000-83642000 r--s 00037000 08:01 2886334    /home/java01/Desktop/jboss/common/lib/bsh.jar
+83642000-83643000 r--s 00001000 08:01 2886445    /home/java01/Desktop/jboss/common/lib/jboss-switchboard-metadata.jar
+83643000-83647000 r--s 0002a000 08:01 2886327    /home/java01/Desktop/jboss/common/lib/cxf-rt-ws-rm.jar
+83647000-83649000 r--s 0000a000 08:01 2886344    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-security.jar
+83649000-8364b000 r--s 00000000 08:01 2886505    /home/java01/Desktop/jboss/common/lib/jboss-switchboard-spi.jar
+8364b000-83651000 r--s 00046000 08:01 2886459    /home/java01/Desktop/jboss/common/lib/cxf-common-utilities.jar
+83651000-83653000 r--s 00008000 08:01 2886524    /home/java01/Desktop/jboss/common/lib/ejb31-calendar-expr-parser.jar
+83653000-83655000 r--s 0000a000 08:01 2886373    /home/java01/Desktop/jboss/common/lib/jboss-metadata-ear.jar
+83655000-83657000 r--s 00008000 08:01 2886520    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-singleton-aop-impl.jar
+83657000-83659000 r--s 00003000 08:01 2886530    /home/java01/Desktop/jboss/common/lib/jboss-injection.jar
+83659000-8365c000 r--s 00014000 08:01 2886510    /home/java01/Desktop/jboss/common/lib/jboss-jaxb-api_2.2_spec.jar
+8365c000-8365d000 r--s 00002000 08:01 2886427    /home/java01/Desktop/jboss/common/lib/jboss-embedded-api.jar
+8365d000-8365f000 r--s 00001000 08:01 2886442    /home/java01/Desktop/jboss/common/lib/jboss-interceptors-api_1.1_spec.jar
+8365f000-83660000 r--s 00001000 08:01 2886389    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-endpoint.jar
+83660000-83661000 r--s 00001000 08:01 2886435    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-instantiator-deployer.jar
+83661000-83665000 r--s 0001a000 08:01 2886565    /home/java01/Desktop/jboss/common/lib/cxf-tools-java2ws.jar
+83665000-83666000 r--s 00000000 08:01 2886500    /home/java01/Desktop/jboss/common/lib/proxy-reflect.jar
+83666000-83668000 r--s 00000000 08:01 2886342    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-embedded-spi.jar
+83668000-8366a000 r--s 00011000 08:01 2886450    /home/java01/Desktop/jboss/common/lib/jboss-marshalling-river.jar
+8366a000-8366c000 r--s 00006000 08:01 2886331    /home/java01/Desktop/jboss/common/lib/jboss-jaxr-api_1.0_spec.jar
+8366c000-8366e000 r--s 00000000 08:01 2886509    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-effigy-api.jar
+8366e000-8366f000 r--s 00000000 08:01 2886359    /home/java01/Desktop/jboss/common/lib/managed-beans-metadata.jar
+8366f000-83670000 r--s 00000000 08:01 2886328    /home/java01/Desktop/jboss/common/lib/shrinkwrap-spi.jar
+83670000-83672000 r--s 00002000 08:01 2886467    /home/java01/Desktop/jboss/common/lib/scanning-deployers.jar
+83672000-83675000 r--s 00023000 08:01 2886380    /home/java01/Desktop/jboss/common/lib/cxf-rt-ws-policy.jar
+83675000-83677000 r--s 00002000 08:01 2886358    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-embedded-sub.jar
+83677000-83678000 r--s 00003000 08:01 2886348    /home/java01/Desktop/jboss/common/lib/log4j-snmp-appender.jar
+83678000-8367a000 r--s 00006000 08:01 2886488    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-transactions.jar
+8367a000-8367c000 r--s 0000b000 08:01 2886390    /home/java01/Desktop/jboss/common/lib/cxf-common-schemas.jar
+8367c000-8367d000 r--s 00002000 08:01 2886456    /home/java01/Desktop/jboss/common/lib/jbossas-remoting.jar
+8367d000-8367f000 r--s 00000000 08:01 2886495    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-singleton-proxy-impl.jar
+8367f000-83680000 r--s 00004000 08:01 2886370    /home/java01/Desktop/jboss/common/lib/jboss-jpa-impl.jar
+83680000-83683000 r--s 0001a000 08:01 2886503    /home/java01/Desktop/jboss/common/lib/bsf.jar
+83683000-83685000 r--s 0000a000 08:01 2886425    /home/java01/Desktop/jboss/common/lib/cxf-rt-bindings-http.jar
+83685000-83687000 r--s 00000000 08:01 2886460    /home/java01/Desktop/jboss/common/lib/jboss-switchboard-impl.jar
+83687000-8368b000 r--s 00035000 08:01 2886449    /home/java01/Desktop/jboss/common/lib/hornetq-jms.jar
+8368b000-8368e000 r--s 0000c000 08:01 2886531    /home/java01/Desktop/jboss/common/lib/jboss-interceptor-core.jar
+8368e000-83690000 r--s 00005000 08:01 2886462    /home/java01/Desktop/jboss/common/lib/managed-beans-mc-int.jar
+83690000-83691000 r--s 00000000 08:01 2886347    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-proxy-spi.jar
+83691000-8369a000 r--s 00069000 08:01 2886345    /home/java01/Desktop/jboss/common/lib/cxf-rt-core.jar
+8369a000-8369f000 r--s 00015000 08:01 2886315    /home/java01/Desktop/jboss/common/lib/hibernate-jpa-2.0-api.jar
+8369f000-836a1000 r--s 00005000 08:01 2886397    /home/java01/Desktop/jboss/common/lib/jboss-jad-api_1.2_spec.jar
+836a1000-836a3000 r--s 00000000 08:01 2886552    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-embedded-impl-shrinkwrap.jar
+836a3000-836a6000 r--s 0001b000 08:01 2886555    /home/java01/Desktop/jboss/common/lib/jboss-common-jdbc-wrapper.jar
+836a6000-836aa000 r--s 00015000 08:01 2886366    /home/java01/Desktop/jboss/common/lib/shrinkwrap-impl-base.jar
+836aa000-836ac000 r--s 00002000 08:01 2886391    /home/java01/Desktop/jboss/common/lib/slf4j-jboss-logmanager.jar
+836ac000-836af000 r--s 00012000 08:01 2886323    /home/java01/Desktop/jboss/common/lib/joesnmp.jar
+836af000-836b1000 r--s 00009000 08:01 2886502    /home/java01/Desktop/jboss/common/lib/jboss-srp.jar
+836b1000-836b2000 r--s 00001000 08:01 2886521    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-effigy-common.jar
+836b2000-836b4000 r--s 00006000 08:01 2886446    /home/java01/Desktop/jboss/common/lib/jboss-jaxrpc-api_1.1_spec.jar
+836b4000-836b5000 r--s 00000000 08:01 2886540    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-nointerface-spi.jar
+836b5000-836b6000 r--s 00001000 08:01 2886377    /home/java01/Desktop/jboss/common/lib/jboss-injection-switchboard-deployer.jar
+836b6000-836b9000 r--s 00009000 08:01 2886384    /home/java01/Desktop/jboss/common/lib/shrinkwrap-api.jar
+836b9000-836ba000 r--s 00001000 08:01 2886491    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-instantiator-spi.jar
+836ba000-836c4000 r--s 0005f000 08:01 2886553    /home/java01/Desktop/jboss/common/lib/hibernate-entitymanager.jar
+836c4000-836c6000 r--s 00003000 08:01 2886475    /home/java01/Desktop/jboss/common/lib/jboss-reloaded-naming-deployers.jar
+836c6000-836cb000 r--s 0002f000 08:01 2886549    /home/java01/Desktop/jboss/common/lib/xnio-api.jar
+836cb000-836cf000 r--s 0001e000 08:01 2886457    /home/java01/Desktop/jboss/common/lib/jboss-iiop-client.jar
+836cf000-836d0000 r--s 00001000 08:01 2886437    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-timerservice-naming.jar
+836d0000-836d3000 r--s 0001c000 08:01 2886430    /home/java01/Desktop/jboss/common/lib/jboss-serialization.jar
+836d3000-836d4000 r--s 00001000 08:01 2886412    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-async-deployer.jar
+836d4000-836e1000 r--s 000ca000 08:01 2886352    /home/java01/Desktop/jboss/common/lib/jboss-metadata-ejb.jar
+836e1000-836e2000 r--s 00001000 08:01 2886382    /home/java01/Desktop/jboss/common/lib/managed-beans-proxy-impl.jar
+836e2000-836e3000 r--s 00000000 08:01 2886542    /home/java01/Desktop/jboss/common/lib/managed-beans-spi.jar
+836e3000-836e4000 r--s 00001000 08:01 2886518    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-metadata-deployers.jar
+836e4000-836e6000 r--s 00002000 08:01 2886354    /home/java01/Desktop/jboss/common/lib/jboss-jsr77.jar
+836e6000-836e7000 r--s 00005000 08:01 2886438    /home/java01/Desktop/jboss/common/lib/jbosscx-client.jar
+836e7000-836e8000 r--s 00001000 08:01 2886558    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-tx2-aop.jar
+836e8000-836e9000 r--s 00002000 08:01 2886320    /home/java01/Desktop/jboss/common/lib/jboss-transaction-api_1.1_spec.jar
+836e9000-836f5000 r--s 00092000 08:01 2886338    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-core.jar
+836f5000-836f6000 r--s 00002000 08:01 2886324    /home/java01/Desktop/jboss/common/lib/cxf-xjc-bug671.jar
+836f6000-836f9000 r--s 0000a000 08:01 2886514    /home/java01/Desktop/jboss/common/lib/jboss-jsp-api_2.2_spec.jar
+836f9000-836fb000 r--s 00006000 08:01 2886529    /home/java01/Desktop/jboss/common/lib/jboss-integration.jar
+836fb000-836fd000 r--s 00003000 08:01 2886533    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-async-spi.jar
+836fd000-836fe000 r--s 00003000 08:01 2886545    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-context-base.jar
+836fe000-83700000 r--s 0000f000 08:01 2886404    /home/java01/Desktop/jboss/common/lib/cxf-tools-validator.jar
+83700000-83800000 rw-p 00000000 00:00 0 
+83800000-83900000 rw-p 00000000 00:00 0 
+83900000-83a00000 rw-p 00000000 00:00 0 
+83a00000-83afe000 rw-p 00000000 00:00 0 
+83afe000-83b00000 ---p 00000000 00:00 0 
+83b00000-83c00000 rw-p 00000000 00:00 0 
+83c00000-83cfd000 rw-p 00000000 00:00 0 
+83cfd000-83d00000 ---p 00000000 00:00 0 
+83d00000-83e00000 rw-p 00000000 00:00 0 
+83e00000-83ffd000 rw-p 00000000 00:00 0 
+83ffd000-84000000 ---p 00000000 00:00 0 
+84000000-840fd000 rw-p 00000000 00:00 0 
+840fd000-84100000 ---p 00000000 00:00 0 
+84100000-84200000 rw-p 00000000 00:00 0 
+84200000-84201000 r--s 00006000 08:01 2886376    /home/java01/Desktop/jboss/common/lib/cxf-rt-bindings-coloc.jar
+84201000-84204000 r--s 00009000 08:01 2886368    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-proxy-clustered.jar
+84204000-8420c000 r--s 00047000 08:01 2886349    /home/java01/Desktop/jboss/common/lib/jboss-remoting-3.jar
+8420c000-8420e000 r--s 00001000 08:01 2886527    /home/java01/Desktop/jboss/common/lib/jboss-ejb3-container-spi.jar
+8420e000-84214000 r--s 00075000 08:01 2890031    /home/java01/Desktop/jboss/server/default/lib/postgresql-9.0-801.jdbc3.jar
+84214000-84216000 r--s 00004000 08:01 3543263    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jboss-service-binding-mgmt.jar-fa294d500c02fc36/jboss-service-binding-mgmt.jar
+84216000-84218000 r--s 0000a000 08:01 3543250    /home/java01/Desktop/jboss/server/default/tmp/vfs/automount5582b4d2a1010f44/jboss-service-binding-core.jar-cbb2b0faabb70704/jboss-service-binding-core.jar
+84218000-8421b000 ---p 00000000 00:00 0 
+8421b000-84269000 rw-p 00000000 00:00 0 
+84269000-84277000 r--s 0009a000 08:01 2887050    /home/java01/Desktop/jboss/lib/jbosssx.jar
+84277000-8427b000 r--s 00012000 08:01 2887013    /home/java01/Desktop/jboss/lib/jboss-security-spi.jar
+8427b000-84280000 r--s 00028000 08:01 2887014    /home/java01/Desktop/jboss/lib/jbosssx-server.jar
+84280000-84284000 r--s 00093000 08:02 2234904    /opt/jdk1.8_java/jre/lib/jsse.jar
+84284000-84287000 r--s 0000e000 08:01 2887008    /home/java01/Desktop/jboss/lib/jboss-profileservice-persistence.jar
+84287000-8428e000 r--s 0003e000 08:01 2887068    /home/java01/Desktop/jboss/lib/jboss-profileservice-core.jar
+8428e000-84290000 r--s 00004000 08:01 2886999    /home/java01/Desktop/jboss/lib/jboss-profileservice-domain.jar
+84290000-84294000 r--s 0000e000 08:01 2887065    /home/java01/Desktop/jboss/lib/jboss-profileservice-spi.jar
+84294000-8429b000 r--s 0007b000 08:01 2887033    /home/java01/Desktop/jboss/lib/wstx-lgpl.jar
+8429b000-842ad000 r--s 000c6000 08:01 2886995    /home/java01/Desktop/jboss/lib/jaxb-impl.jar
+842ad000-842b0000 r--s 0000c000 08:01 2887039    /home/java01/Desktop/jboss/lib/scanning-plugins.jar
+842b0000-842b2000 r--s 0000c000 08:01 2887066    /home/java01/Desktop/jboss/lib/scanning-impl.jar
+842b2000-842b4000 r--s 00003000 08:01 2886989    /home/java01/Desktop/jboss/lib/scanning-spi.jar
+842b4000-842b9000 r--s 00020000 08:01 2887001    /home/java01/Desktop/jboss/lib/jboss-deployers-vfs.jar
+842b9000-842bd000 r--s 00016000 08:01 2887057    /home/java01/Desktop/jboss/lib/jboss-deployers-vfs-spi.jar
+842bd000-842c0000 r--s 0000b000 08:01 2887051    /home/java01/Desktop/jboss/lib/jboss-deployers-spi.jar
+842c0000-842c3000 r--s 0000c000 08:01 2887016    /home/java01/Desktop/jboss/lib/jboss-deployers-structure-spi.jar
+842c3000-842c5000 r--s 00000000 08:01 2887006    /home/java01/Desktop/jboss/lib/jboss-deployers-client.jar
+842c5000-842c7000 r--s 00003000 08:01 2887002    /home/java01/Desktop/jboss/lib/jboss-deployers-client-spi.jar
+842c7000-842c8000 r--s 00003000 08:01 2887053    /home/java01/Desktop/jboss/lib/jboss-deployers-core.jar
+842c8000-842ca000 r--s 00004000 08:01 2887021    /home/java01/Desktop/jboss/lib/jboss-deployers-core-spi.jar
+842ca000-842d9000 r-xp 00000000 08:02 2235056    /opt/jdk1.8_java/jre/lib/i386/libnio.so
+842d9000-842da000 rw-p 0000e000 08:02 2235056    /opt/jdk1.8_java/jre/lib/i386/libnio.so
+842da000-842e2000 r-xp 00000000 08:02 2235053    /opt/jdk1.8_java/jre/lib/i386/libmanagement.so
+842e2000-842e3000 rw-p 00007000 08:02 2235053    /opt/jdk1.8_java/jre/lib/i386/libmanagement.so
+842e3000-842e8000 r--s 00048000 08:01 2887003    /home/java01/Desktop/jboss/lib/dom4j.jar
+842e8000-842ea000 r--s 00007000 08:01 2887037    /home/java01/Desktop/jboss/lib/jboss-deployers-jmx.jar
+842ea000-842ed000 r--s 0001f000 08:01 2887007    /home/java01/Desktop/jboss/lib/jboss-jmx-mc-int.jar
+842ed000-842ef000 r--s 0000e000 08:01 2887035    /home/java01/Desktop/jboss/lib/jboss-system-jmx.jar
+842ef000-842f5000 r--s 00039000 08:01 2887024    /home/java01/Desktop/jboss/lib/jboss-system.jar
+842f5000-842f8000 r--s 0001c000 08:01 2887027    /home/java01/Desktop/jboss/lib/jboss-jmx.jar
+842f8000-842fa000 r--s 00004000 08:01 2887041    /home/java01/Desktop/jboss/lib/jboss-mbeanserver.jar
+842fa000-842fe000 r--s 00032000 08:01 2887038    /home/java01/Desktop/jboss/lib/jboss-mbeans.jar
+842fe000-84300000 r--s 0000a000 08:01 2887034    /home/java01/Desktop/jboss/lib/jboss-j2se.jar
+84300000-84400000 rw-p 00000000 00:00 0 
+84400000-844ff000 rw-p 00000000 00:00 0 
+844ff000-84500000 ---p 00000000 00:00 0 
+84500000-84600000 rw-p 00000000 00:00 0 
+84600000-84700000 rw-p 00000000 00:00 0 
+84700000-847fe000 rw-p 00000000 00:00 0 
+847fe000-84800000 ---p 00000000 00:00 0 
+84800000-84900000 rw-p 00000000 00:00 0 
+84900000-84a00000 rw-p 00000000 00:00 0 
+84a00000-84b00000 rw-p 00000000 00:00 0 
+84b00000-84c00000 rw-p 00000000 00:00 0 
+84c00000-84c01000 r--s 00001000 08:01 2887043    /home/java01/Desktop/jboss/lib/jboss-jmx-annotations.jar
+84c01000-84c05000 r--s 0001a000 08:01 2886988    /home/java01/Desktop/jboss/lib/jboss-deployers-impl.jar
+84c05000-84c06000 r--s 00000000 08:01 2887000    /home/java01/Desktop/jboss/lib/jboss-aop-jboss5.jar
+84c06000-84c08000 r--s 00005000 08:01 2887022    /home/java01/Desktop/jboss/lib/jboss-aop-deployers.jar
+84c08000-84c0a000 r--s 00006000 08:01 2886994    /home/java01/Desktop/jboss/lib/jboss-aop-asintegration-mc.jar
+84c0a000-84c0c000 r--s 00004000 08:01 2886996    /home/java01/Desktop/jboss/lib/jboss-aop-asintegration-core.jar
+84c0c000-84c2b000 r--s 001af000 08:01 2886493    /home/java01/Desktop/jboss/common/lib/jboss.jar
+84c2b000-84c32000 r--s 00000000 08:03 1049752    /usr/lib/i386-linux-gnu/gconv/gconv-modules.cache
+84c32000-84c53000 r--p 00000000 08:03 1710010    /usr/share/locale-langpack/pt_BR/LC_MESSAGES/libc.mo
+84c53000-84c55000 r--s 00003000 08:01 2887026    /home/java01/Desktop/jboss/lib/jboss-stdio.jar
+84c55000-84c58000 ---p 00000000 00:00 0 
+84c58000-84ca6000 rw-p 00000000 00:00 0 
+84ca6000-84cb0000 r--s 00116000 08:02 2234998    /opt/jdk1.8_java/jre/lib/ext/localedata.jar
+84cb0000-84cb1000 r--s 00001000 08:01 2887055    /home/java01/Desktop/jboss/lib/jboss-classloading-spi.jar
+84cb1000-84cb3000 r--s 00001000 08:01 2886990    /home/java01/Desktop/jboss/lib/jboss-bootstrap-api-mc.jar
+84cb3000-84cbb000 r--s 00051000 08:01 2887028    /home/java01/Desktop/jboss/lib/trove.jar
+84cbb000-84cd2000 r--s 00134000 08:01 2887056    /home/java01/Desktop/jboss/lib/jboss-aop.jar
+84cd2000-84cd4000 r--s 00006000 08:01 2887005    /home/java01/Desktop/jboss/lib/jboss-classloading-vfs.jar
+84cd4000-84d09000 r--s 00000000 08:03 1055622    /var/cache/nscd/hosts
+84d09000-84d0a000 ---p 00000000 00:00 0 
+84d0a000-84d8a000 rw-p 00000000 00:00 0 
+84d8a000-84d8d000 ---p 00000000 00:00 0 
+84d8d000-84ddb000 rw-p 00000000 00:00 0 
+84ddb000-84dde000 ---p 00000000 00:00 0 
+84dde000-84e5c000 rw-p 00000000 00:00 0 
+84e5c000-84e5f000 ---p 00000000 00:00 0 
+84e5f000-84edd000 rw-p 00000000 00:00 0 
+84edd000-850dd000 r--p 00000000 08:03 923961     /usr/lib/locale/locale-archive
+850dd000-850e0000 ---p 00000000 00:00 0 
+850e0000-8512e000 rw-p 00000000 00:00 0 
+8512e000-85131000 ---p 00000000 00:00 0 
+85131000-8517f000 rw-p 00000000 00:00 0 
+8517f000-85180000 ---p 00000000 00:00 0 
+85180000-85200000 rw-p 00000000 00:00 0 
+85200000-852ff000 rw-p 00000000 00:00 0 
+852ff000-85300000 ---p 00000000 00:00 0 
+85300000-85302000 r--s 0000b000 08:01 2886997    /home/java01/Desktop/jboss/lib/jboss-classpool-jbosscl.jar
+85302000-85304000 r--s 00003000 08:01 2887052    /home/java01/Desktop/jboss/lib/jboss-bootstrap-impl-mc.jar
+85304000-85308000 r--s 0001d000 08:01 2887045    /home/java01/Desktop/jboss/lib/jboss-classloading.jar
+85308000-85309000 r--s 00000000 08:01 2887031    /home/java01/Desktop/jboss/lib/javax.inject.jar
+85309000-8530b000 r--s 00008000 08:01 2887049    /home/java01/Desktop/jboss/lib/jboss-bootstrap-impl-as.jar
+8530b000-85322000 r--s 00119000 08:01 2887004    /home/java01/Desktop/jboss/lib/xercesImpl.jar
+85322000-8532b000 r--s 00096000 08:01 2886992    /home/java01/Desktop/jboss/lib/javassist.jar
+8532b000-8532c000 r--s 00002000 08:01 2887017    /home/java01/Desktop/jboss/lib/jboss-classpool-scoped.jar
+8532c000-85330000 r--s 0001c000 08:01 2887030    /home/java01/Desktop/jboss/lib/jboss-managed.jar
+85330000-85334000 r--s 00023000 08:01 2887019    /home/java01/Desktop/jboss/lib/jboss-classloader.jar
+85334000-85383000 rw-p 00000000 00:00 0 
+85383000-85559000 r--s 03caa000 08:02 2234914    /opt/jdk1.8_java/jre/lib/rt.jar
+85559000-859fa000 rw-p 00000000 00:00 0 
+859fa000-85a00000 ---p 00000000 00:00 0 
+85a00000-86c00000 rw-p 00000000 00:00 0 
+86c00000-86cfc000 rw-p 00000000 00:00 0 
+86cfc000-86d00000 ---p 00000000 00:00 0 
+86d00000-86d0e000 r--s 0008a000 08:01 2887015    /home/java01/Desktop/jboss/lib/jboss-reflect.jar
+86d0e000-86d11000 r--s 0000d000 08:01 2887011    /home/java01/Desktop/jboss/lib/jboss-classpool.jar
+86d11000-86d22000 r--s 00095000 08:01 2887029    /home/java01/Desktop/jboss/lib/jboss-kernel.jar
+86d22000-86d2e000 r--s 0007c000 08:01 2887042    /home/java01/Desktop/jboss/lib/jboss-common-core.jar
+86d2e000-86d31000 ---p 00000000 00:00 0 
+86d31000-86d7f000 rw-p 00000000 00:00 0 
+86d7f000-86d80000 ---p 00000000 00:00 0 
+86d80000-86e00000 rw-p 00000000 00:00 0 
+86e00000-86e21000 rw-p 00000000 00:00 0 
+86e21000-86f00000 ---p 00000000 00:00 0 
+86f00000-86f02000 r--s 00000000 08:01 2887010    /home/java01/Desktop/jboss/lib/jboss-bootstrap-spi.jar
+86f02000-86f04000 r--s 00001000 08:01 2887046    /home/java01/Desktop/jboss/lib/jboss-bootstrap-spi-as.jar
+86f04000-86f08000 r--s 00024000 08:01 2887054    /home/java01/Desktop/jboss/lib/jboss-aop-mc-int.jar
+86f08000-86f09000 r--s 00007000 08:01 2887020    /home/java01/Desktop/jboss/lib/jboss-bootstrap-impl-base.jar
+86f09000-86f0d000 r--s 0001f000 08:01 2886993    /home/java01/Desktop/jboss/lib/jboss-metatype.jar
+86f0d000-86f12000 r--s 00029000 08:01 2886998    /home/java01/Desktop/jboss/lib/jboss-logmanager.jar
+86f12000-86f15000 r--s 00018000 08:01 2887032    /home/java01/Desktop/jboss/lib/jboss-vfs.jar
+86f15000-86f17000 r--s 00003000 08:01 2886991    /home/java01/Desktop/jboss/lib/jboss-bootstrap-api.jar
+86f17000-86f19000 r--s 0000b000 08:01 2887048    /home/java01/Desktop/jboss/lib/jboss-logging.jar
+86f19000-86f1d000 r--s 0001e000 08:01 2887040    /home/java01/Desktop/jboss/lib/jboss-dependency.jar
+86f1d000-86f23000 r--s 0002a000 08:01 2887023    /home/java01/Desktop/jboss/lib/jboss-mdr.jar
+86f23000-86f2e000 r--s 00086000 08:01 2887018    /home/java01/Desktop/jboss/lib/jbossxb.jar
+86f2e000-86f31000 ---p 00000000 00:00 0 
+86f31000-86f7f000 rw-p 00000000 00:00 0 
+86f7f000-86f80000 ---p 00000000 00:00 0 
+86f80000-8d340000 rw-p 00000000 00:00 0 
+8d340000-9c580000 ---p 00000000 00:00 0 
+9c580000-a7000000 rw-p 00000000 00:00 0 
+a7000000-a7001000 r--s 00000000 08:01 2887044    /home/java01/Desktop/jboss/lib/jboss-bootstrap-spi-mc.jar
+a7001000-a7008000 r--s 00038000 08:01 2887009    /home/java01/Desktop/jboss/lib/concurrent.jar
+a7008000-a701d000 r-xp 00000000 08:02 2235055    /opt/jdk1.8_java/jre/lib/i386/libnet.so
+a701d000-a701e000 rw-p 00014000 08:02 2235055    /opt/jdk1.8_java/jre/lib/i386/libnet.so
+a701e000-a7021000 r--s 00011000 08:01 2886286    /home/java01/Desktop/jboss/bin/run.jar
+a7021000-a7023000 r--s 00005000 08:01 2887060    /home/java01/Desktop/jboss/lib/endorsed/stax-api.jar
+a7023000-a7026000 r--s 00009000 08:01 2887061    /home/java01/Desktop/jboss/lib/endorsed/jboss-jaxws-api_2.2_spec.jar
+a7026000-a7064000 rw-p 00000000 00:00 0 
+a7064000-a70dd000 ---p 00000000 00:00 0 
+a70dd000-a710f000 rw-p 00000000 00:00 0 
+a710f000-a7187000 ---p 00000000 00:00 0 
+a7187000-a71dd000 rw-p 00000000 00:00 0 
+a71dd000-a7215000 rw-p 00000000 00:00 0 
+a7215000-a759e000 ---p 00000000 00:00 0 
+a759e000-a834e000 rwxp 00000000 00:00 0 
+a834e000-b659e000 ---p 00000000 00:00 0 
+b659e000-b65a6000 rw-s 00000000 08:03 5505123    /tmp/hsperfdata_java01/16169
+b65a6000-b65db000 r--s 00000000 08:03 1048961    /var/cache/nscd/passwd
+b65db000-b65ff000 r-xp 00000000 08:02 2235034    /opt/jdk1.8_java/jre/lib/i386/libjava.so
+b65ff000-b6600000 rw-p 00023000 08:02 2235034    /opt/jdk1.8_java/jre/lib/i386/libjava.so
+b6600000-b66f8000 rw-p 00000000 00:00 0 
+b66f8000-b6700000 ---p 00000000 00:00 0 
+b6700000-b6701000 r--s 00002000 08:01 2887036    /home/java01/Desktop/jboss/lib/jboss-bootstrap-api-as.jar
+b6701000-b6702000 r--s 00003000 08:01 2886899    /home/java01/Desktop/jboss/client/getopt.jar
+b6702000-b671b000 r-xp 00000000 08:02 2235069    /opt/jdk1.8_java/jre/lib/i386/libzip.so
+b671b000-b671c000 rw-p 00018000 08:02 2235069    /opt/jdk1.8_java/jre/lib/i386/libzip.so
+b671c000-b6723000 r-xp 00000000 08:03 787445     /lib/i386-linux-gnu/librt-2.15.so
+b6723000-b6724000 r--p 00006000 08:03 787445     /lib/i386-linux-gnu/librt-2.15.so
+b6724000-b6725000 rw-p 00007000 08:03 787445     /lib/i386-linux-gnu/librt-2.15.so
+b6725000-b6728000 ---p 00000000 00:00 0 
+b6728000-b6776000 rw-p 00000000 00:00 0 
+b6776000-b67a0000 r-xp 00000000 08:03 787391     /lib/i386-linux-gnu/libm-2.15.so
+b67a0000-b67a1000 r--p 00029000 08:03 787391     /lib/i386-linux-gnu/libm-2.15.so
+b67a1000-b67a2000 rw-p 0002a000 08:03 787391     /lib/i386-linux-gnu/libm-2.15.so
+b67a2000-b70de000 r-xp 00000000 08:02 2235074    /opt/jdk1.8_java/jre/lib/i386/server/libjvm.so
+b70de000-b714a000 rw-p 0093b000 08:02 2235074    /opt/jdk1.8_java/jre/lib/i386/server/libjvm.so
+b714a000-b756f000 rw-p 00000000 00:00 0 
+b756f000-b770e000 r-xp 00000000 08:03 787359     /lib/i386-linux-gnu/libc-2.15.so
+b770e000-b7710000 r--p 0019f000 08:03 787359     /lib/i386-linux-gnu/libc-2.15.so
+b7710000-b7711000 rw-p 001a1000 08:03 787359     /lib/i386-linux-gnu/libc-2.15.so
+b7711000-b7714000 rw-p 00000000 00:00 0 
+b7714000-b7717000 r-xp 00000000 08:03 787372     /lib/i386-linux-gnu/libdl-2.15.so
+b7717000-b7718000 r--p 00002000 08:03 787372     /lib/i386-linux-gnu/libdl-2.15.so
+b7718000-b7719000 rw-p 00003000 08:03 787372     /lib/i386-linux-gnu/libdl-2.15.so
+b7719000-b771a000 rw-p 00000000 00:00 0 
+b771a000-b772e000 r-xp 00000000 08:02 2235151    /opt/jdk1.8_java/lib/i386/jli/libjli.so
+b772e000-b772f000 rw-p 00013000 08:02 2235151    /opt/jdk1.8_java/lib/i386/jli/libjli.so
+b772f000-b7746000 r-xp 00000000 08:03 787439     /lib/i386-linux-gnu/libpthread-2.15.so
+b7746000-b7747000 r--p 00016000 08:03 787439     /lib/i386-linux-gnu/libpthread-2.15.so
+b7747000-b7748000 rw-p 00017000 08:03 787439     /lib/i386-linux-gnu/libpthread-2.15.so
+b7748000-b774a000 rw-p 00000000 00:00 0 
+b774a000-b774b000 r--s 00000000 08:01 2887062    /home/java01/Desktop/jboss/lib/endorsed/jbossws-cxf-factories.jar
+b774b000-b774d000 r--s 0000e000 08:01 2887059    /home/java01/Desktop/jboss/lib/endorsed/activation.jar
+b774d000-b774f000 r--s 00001000 08:01 2887063    /home/java01/Desktop/jboss/lib/endorsed/jboss-annotations-api_1.1_spec.jar
+b774f000-b7752000 r--s 00014000 08:01 2887064    /home/java01/Desktop/jboss/lib/endorsed/jboss-jaxb-api_2.2_spec.jar
+b7752000-b7753000 rw-p 00000000 00:00 0 
+b7753000-b7754000 ---p 00000000 00:00 0 
+b7754000-b775f000 r-xp 00000000 08:02 2235068    /opt/jdk1.8_java/jre/lib/i386/libverify.so
+b775f000-b7760000 rw-p 0000b000 08:02 2235068    /opt/jdk1.8_java/jre/lib/i386/libverify.so
+b7760000-b7762000 rw-p 00000000 00:00 0 
+b7762000-b7763000 r-xp 00000000 00:00 0          [vdso]
+b7763000-b7783000 r-xp 00000000 08:03 787339     /lib/i386-linux-gnu/ld-2.15.so
+b7783000-b7784000 r--p 0001f000 08:03 787339     /lib/i386-linux-gnu/ld-2.15.so
+b7784000-b7785000 rw-p 00020000 08:03 787339     /lib/i386-linux-gnu/ld-2.15.so
+bf8c1000-bf8c2000 rwxp 00000000 00:00 0 
+bf8f4000-bf915000 rw-p 00000000 00:00 0          [stack]
+
+VM Arguments:
+jvm_args: -Xms128m -Xmx512m -XX:MaxPermSize=256m -Dorg.jboss.resolver.warning=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djava.net.preferIPv4Stack=true -Dprogram.name=run.sh -Dlogging.configuration=file:./logging.properties -Djava.library.path=/home/java01/Desktop/jboss/bin/native/lib -Djava.endorsed.dirs=/home/java01/Desktop/jboss/lib/endorsed 
+java_command: org.jboss.Main
+java_class_path (initial): /home/java01/Desktop/jboss/bin/run.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/opt/jdk1.8_java/bin/:/home/java01/Desktop/apache-tomcat-6/bin:/opt/jdk1.8_java/bin:/opt/maven-3.0.5/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+LD_LIBRARY_PATH=/home/java01/Desktop/jboss/bin/native/lib
+SHELL=/bin/bash
+DISPLAY=:0.0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x8943c0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0x8943c0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x71de00], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x71de00], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x71de00], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x71de00], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x71f5b0], sa_mask[0]=00000000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x720ab0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x720ab0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x720ab0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x720ab0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=12.04
+DISTRIB_CODENAME=precise
+DISTRIB_DESCRIPTION="Ubuntu 12.04 LTS"
+
+uname:Linux 3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012 i686
+libc:glibc 2.15 NPTL 2.15 
+rlimit: STACK 8192k, CORE 0k, NPROC 31107, NOFILE 4096, AS infinity
+load average:1,06 1,11 1,09
+
+/proc/meminfo:
+MemTotal:        3996300 kB
+MemFree:          945936 kB
+Buffers:          177672 kB
+Cached:          1047280 kB
+SwapCached:         2056 kB
+Active:          1893888 kB
+Inactive:         989896 kB
+Active(anon):    1332032 kB
+Inactive(anon):   372376 kB
+Active(file):     561856 kB
+Inactive(file):   617520 kB
+Unevictable:          16 kB
+Mlocked:              16 kB
+HighTotal:       3149384 kB
+HighFree:         445068 kB
+LowTotal:         846916 kB
+LowFree:          500868 kB
+SwapTotal:       3905532 kB
+SwapFree:        3890780 kB
+Dirty:             13836 kB
+Writeback:             0 kB
+AnonPages:       1656920 kB
+Mapped:           201800 kB
+Shmem:             45576 kB
+Slab:             107448 kB
+SReclaimable:      89744 kB
+SUnreclaim:        17704 kB
+KernelStack:        4096 kB
+PageTables:        16044 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     5903680 kB
+Committed_AS:    6380992 kB
+VmallocTotal:     122880 kB
+VmallocUsed:       15448 kB
+VmallocChunk:     102656 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       10232 kB
+DirectMap2M:      903168 kB
+
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 16 model 6 stepping 2, cmov, cx8, fxsr, mmx, sse, sse2, sse3, popcnt, mmxext, 3dnowpref, lzcnt, sse4a, tsc, tscinvbit, tscinv
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 6
+model name	: AMD Athlon(tm) II X2 245 Processor
+stepping	: 2
+microcode	: 0x100009f
+cpu MHz		: 2900.000
+cache size	: 1024 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow constant_tsc nonstop_tsc extd_apicid pni monitor cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt npt lbrv svm_lock nrip_save
+bogomips	: 5800.21
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate
+
+processor	: 1
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 6
+model name	: AMD Athlon(tm) II X2 245 Processor
+stepping	: 2
+microcode	: 0x100009f
+cpu MHz		: 2900.000
+cache size	: 1024 KB
+physical id	: 0
+siblings	: 2
+core id		: 1
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow constant_tsc nonstop_tsc extd_apicid pni monitor cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt npt lbrv svm_lock nrip_save
+bogomips	: 5800.23
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate
+
+
+
+Memory: 4k page, physical 3996300k(945936k free), swap 3905532k(3890780k free)
+
+vm_info: Java HotSpot(TM) Server VM (25.25-b02) for linux-x86 JRE (1.8.0_25-b17), built on Sep 17 2014 16:16:24 by "java_re" with gcc 4.3.0 20080428 (Red Hat 4.3.0-8)
+
+time: Sat Mar 11 16:18:31 2017
+elapsed time: 13 seconds (0d 0h 0m 13s)
+

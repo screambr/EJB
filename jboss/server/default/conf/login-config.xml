@@ -141,8 +141,24 @@ $Revision: 102506 $
     <authentication>
       <login-module code="org.jboss.security.auth.spi.UsersRolesLoginModule"
         flag="required"/>
-    </authentication>
+                 </authentication>
   </application-policy>
+  <application-policy name = "blog_policy">
+       <authentication>
+	 
+          <login-module code = "org.jboss.security.auth.spi.DatabaseServerLoginModule" flag = "required">            
+            <module-option name="hashAlgorithm">MD5</module-option>
+             <module-option name="hashEncoding">base64</module-option> 
+	    <module-option name = "unauthenticatedIdentity">guest</module-option>
+	     
+             <module-option name = "dsJndiName">java:jdbc/BlogDS</module-option>
+             <module-option name = "principalsQuery">SELECT senha FROM Usuario WHERE login=?</module-option>
+             <module-option name = "rolesQuery">SELECT p.role, 'Roles' FROM Usuario u INNER JOIN permissao p ON (p.usuario_id = u.id) WHERE login=?</module-option>
+          </login-module>
+	  
+       </authentication>
+    </application-policy>
+
 
 </policy>
 

@@ -1,0 +1,8 @@
+package br.com.dextra.treinamento.model.service.transaction;
+
+import javax.ejb.Stateless;
+
+@Stateless
+public class ClienteTransacoesImpl implements ClienteTransacoes {
+
+}
